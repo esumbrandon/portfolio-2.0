@@ -1,18 +1,15 @@
-import Details from "./detailsPic"
-import homeStyle from "./homeStylle.module.css"
-import Information from "./information"
-import LineZero from "./lineZero"
+import Details from './detailsPic';
+import Information from './information';
+import LineZero from './lineZero';
+
 const Home = () => {
   return (
-    <div>
-      <div className={homeStyle.main}>
+    <div style={{ background: 'var(--bg-primary)' }}>
       <Information />
-        <LineZero />
-        <Details />
-      </div>
-
+      <LineZero />
+      <Details />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
