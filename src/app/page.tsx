@@ -86,8 +86,8 @@ const projects = [
   {
     title: 'LilyFit',
     description:
-      'A fitness and nutrition tracking app that lets users log their carb intake, monitor macros, and manage their fitness goals. Built with a focus on clean UX and real-time data management.',
-    tags: ['React', 'Next.js', 'TypeScript', 'Node.js'],
+      'A mobile fitness and nutrition app that lets users log their carb intake, monitor macros, and manage their fitness goals. Built with Flutter and Dart, powered by Supabase for real-time data and authentication.',
+    tags: ['Flutter', 'Dart', 'Supabase', 'Mobile'],
     github: 'https://github.com/esumbrandon/lilyFit',
     demo: '#',
     gradient: 'from-pink-500 to-rose-500',
