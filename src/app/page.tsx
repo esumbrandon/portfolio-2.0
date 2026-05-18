@@ -84,6 +84,15 @@ const experience = [
 
 const projects = [
   {
+    title: 'LilyFit',
+    description:
+      'A fitness and nutrition tracking app that lets users log their carb intake, monitor macros, and manage their fitness goals. Built with a focus on clean UX and real-time data management.',
+    tags: ['React', 'Next.js', 'TypeScript', 'Node.js'],
+    github: 'https://github.com/esumbrandon/lilyFit',
+    demo: '#',
+    gradient: 'from-pink-500 to-rose-500',
+  },
+  {
     title: 'Portfolio 2.0',
     description:
       'A modern, responsive portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. Features a dark theme, smooth scroll, and clean component architecture.',
@@ -100,15 +109,6 @@ const projects = [
     github: '#',
     demo: '#',
     gradient: 'from-cyan-500 to-blue-500',
-  },
-  {
-    title: 'Weather Dashboard',
-    description:
-      'A weather web app displaying real-time data. Built with Next.js and integrating a third-party weather API to provide live forecasts and city search.',
-    tags: ['Next.js', 'API', 'JavaScript', 'CSS'],
-    github: '#',
-    demo: '#',
-    gradient: 'from-emerald-500 to-teal-500',
   },
 ];
 
