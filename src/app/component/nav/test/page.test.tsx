@@ -1,26 +1,31 @@
-import { render } from '@testing-library/react';
-import assert from 'node:assert';
-import test from 'node:test';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import NavBar from '../page';
 
-test('Should render the navigation bar with the correct logo and links', () => {
-  const { getByAltText, getByText } = render(<NavBar />);
+describe('NavBar', () => {
+  it('renders the logo image', () => {
+    render(<NavBar />);
+    expect(screen.getByAltText('Logo')).toBeInTheDocument();
+  });
 
-  // Check if the logo image is rendered
-  const logoImage = getByAltText('main logo');
-  assert.ok(logoImage);
+  it('renders all navigation links', () => {
+    render(<NavBar />);
+    expect(screen.getByText('Home')).toBeInTheDocument();
+    expect(screen.getByText('About')).toBeInTheDocument();
+    expect(screen.getByText('Skills')).toBeInTheDocument();
+    expect(screen.getByText('Experience')).toBeInTheDocument();
+    expect(screen.getByText('Projects')).toBeInTheDocument();
+    expect(screen.getByText('Contact')).toBeInTheDocument();
+  });
 
-  // Check if the navigation links are present
-  const homeLink = getByText('Home');
-  const bioLink = getByText('Bio');
-  const projectLink = getByText('Project');
-
-  assert.ok(homeLink);
-  assert.ok(bioLink);
-  assert.ok(projectLink);
-
-  // Check the href attributes of the navigation links
-  assert.strictEqual(homeLink.getAttribute('href'), '/');
-  assert.strictEqual(bioLink.getAttribute('href'), '/component/bio');
-  assert.strictEqual(projectLink.getAttribute('href'), '/component/project');
+  it('navigation links point to the correct anchors', () => {
+    render(<NavBar />);
+    expect(screen.getByText('Home')).toHaveAttribute('href', '/#home');
+    expect(screen.getByText('About')).toHaveAttribute('href', '/#about');
+    expect(screen.getByText('Skills')).toHaveAttribute('href', '/#skills');
+    expect(screen.getByText('Experience')).toHaveAttribute('href', '/#experience');
+    expect(screen.getByText('Projects')).toHaveAttribute('href', '/#projects');
+    expect(screen.getByText('Contact')).toHaveAttribute('href', '/#contact');
+  });
 });
+
