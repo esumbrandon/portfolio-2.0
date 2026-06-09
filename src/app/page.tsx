@@ -68,7 +68,7 @@ const experience = [
     gradient: 'from-cyan-500 to-blue-500',
   },
   {
-    role: 'Full-Stack Software Engineer — Intern',
+    role: 'Full-Stack Software Engineer',
     company: 'Bohiko',
     period: 'Previous',
     current: false,
@@ -601,7 +601,7 @@ export default function App() {
       <footer className="py-8 border-t" style={{ borderColor: 'var(--border)' }}>
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-            © 2026 Esum Brandon Oben. Built with Next.js &amp; Tailwind CSS.
+            © 2026 Esum Brandon Oben. all rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <a
