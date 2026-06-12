@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import MeImage from './component/nav/Assets/Logo/me.png';
+import TestUsersSection from './component/test-users/page';
 
 const skills = [
   // Languages
@@ -524,6 +525,9 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      {/* ─────────────── TEST USERS ─────────────── */}
+      <TestUsersSection />
 
       {/* ─────────────── CONTACT ─────────────── */}
       <section
