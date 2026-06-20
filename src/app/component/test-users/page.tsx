@@ -99,7 +99,7 @@ export default function TestUsersSection() {
                 style={{
                   background: 'var(--bg-card)',
                   borderColor: 'var(--border)',
-                  color: 'var(--accent-light)',
+                  color: 'var(--text-secondary)',
                 }}
               >
                 Beta Testing
@@ -128,9 +128,9 @@ export default function TestUsersSection() {
                       onChange={(e) => setUserEmail(e.target.value)}
                       onKeyDown={(e) => e.key === 'Enter' && submitEmail()}
                       placeholder="your.email@example.com"
-                      className="px-4 py-3 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      className="px-4 py-3 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"
                       style={{
-                        background: 'var(--bg-secondary)',
+                        background: 'var(--bg-primary)',
                         borderColor: 'var(--border)',
                         color: 'var(--text-primary)',
                       }}
@@ -139,7 +139,7 @@ export default function TestUsersSection() {
                       onClick={submitEmail}
                       className="py-3 rounded-lg font-semibold text-white transition-all duration-200 hover:scale-[1.02]"
                       style={{
-                        background: 'linear-gradient(135deg, var(--accent), #4f46e5)',
+                        background: 'linear-gradient(135deg, var(--accent), #333333)',
                         boxShadow: '0 0 32px var(--accent-glow)',
                       }}
                     >
@@ -149,8 +149,8 @@ export default function TestUsersSection() {
                 </>
               ) : (
                 <div className="text-center py-6">
-                  <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ background: 'rgba(34,197,94,0.1)' }}>
-                    <svg className="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ background: 'rgba(211,211,211,0.1)' }}>
+                    <svg className="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
@@ -162,7 +162,7 @@ export default function TestUsersSection() {
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="text-sm text-purple-400 hover:text-purple-300"
+                    className="text-sm text-gray-600 hover:text-gray-500"
                   >
                     Submit another email
                   </button>
@@ -186,9 +186,9 @@ export default function TestUsersSection() {
                 onChange={(e) => setAdminPassword(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleAdminLogin()}
                 placeholder="Enter admin password"
-                className="px-4 py-3 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="px-4 py-3 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"
                 style={{
-                  background: 'var(--bg-secondary)',
+                  background: 'var(--bg-primary)',
                   borderColor: 'var(--border)',
                   color: 'var(--text-primary)',
                 }}
@@ -226,7 +226,7 @@ export default function TestUsersSection() {
                     </h3>
                     <button
                       onClick={clearAllEmails}
-                      className="text-xs text-red-400 hover:text-red-300"
+                      className="text-xs text-red-500 hover:text-red-400"
                     >
                       Clear All
                     </button>
@@ -237,14 +237,14 @@ export default function TestUsersSection() {
                       <div
                         key={index}
                         className="flex items-center justify-between px-4 py-2.5 rounded-lg border"
-                        style={{ background: 'var(--bg-secondary)', borderColor: 'var(--border)' }}
+                        style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)' }}
                       >
                         <span className="text-sm" style={{ color: 'var(--text-primary)' }}>
                           {email}
                         </span>
                         <button
                           onClick={() => removeEmail(index)}
-                          className="text-red-400 hover:text-red-300 text-sm font-medium"
+                          className="text-red-500 hover:text-red-400 text-sm font-medium"
                         >
                           Remove
                         </button>
@@ -256,7 +256,7 @@ export default function TestUsersSection() {
                     onClick={generateCSV}
                     className="w-full py-3 rounded-lg font-semibold text-white transition-all duration-200 hover:scale-[1.02]"
                     style={{
-                      background: 'linear-gradient(135deg, var(--accent), #4f46e5)',
+                      background: 'linear-gradient(135deg, var(--accent), #333333)',
                       boxShadow: '0 0 32px var(--accent-glow)',
                     }}
                   >
@@ -277,4 +277,3 @@ export default function TestUsersSection() {
     </section>
   );
 }
-

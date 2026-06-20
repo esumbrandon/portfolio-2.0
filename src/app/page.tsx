@@ -34,26 +34,26 @@ const skills = [
 ];
 
 const categoryColors: Record<string, string> = {
-  Language: '#0891b2',
-  Framework: '#7c3aed',
-  Cloud: '#0d9488',
-  Database: '#059669',
-  Tools: '#d97706',
+  Language: '#626972',
+  Framework: '#000000',
+  Cloud: '#808a8a',
+  Database: '#000000',
+  Tools: '#6c6c6b',
 };
 
 const experience = [
   {
-    role: 'Full-Stack Software Engineer — Senior (Backend)',
+    role: 'Full-Stack Software Engineer — Seniorxx',
     company: 'Adorsys GmbH',
-    period: 'Current',
-    current: true,
+    period: 'previous',
+    current: false,
     highlights: [
-      'Banking APIs with Java, Spring Boot, Spring Security & OAuth2',
+      'Banking APIs with Java, Spring Boot, Spring Security & OAuth2 using Keycloak',
       'Implemented PSD2 & Open Finance API (Berlin Group Spec V2) with Keycloak',
       'Customized FAPI security profiles, OAuth2 & OpenID Connect flows',
       'DevOps with Docker, Kubernetes & AWS; AI agent & prompt engineering automation',
     ],
-    gradient: 'from-violet-500 to-indigo-500',
+    gradient: 'from-gray-300 to-gray-100',
   },
   {
     role: 'Full-Stack Software Engineer — Ex-Co-Founder',
@@ -66,7 +66,7 @@ const experience = [
       'Created architectural designs and low/high-fidelity UI/UX designs',
       'Team Lead: mentored developers and coordinated project milestones',
     ],
-    gradient: 'from-cyan-500 to-blue-500',
+    gradient: 'from-gray-400 to-gray-200',
   },
   {
     role: 'Full-Stack Software Engineer',
@@ -79,7 +79,7 @@ const experience = [
       'Containerized applications using Docker on Linux environments',
       'Translated Figma UI/UX designs into functional web applications',
     ],
-    gradient: 'from-emerald-500 to-teal-500',
+    gradient: 'from-gray-200 to-white',
   },
 ];
 
@@ -91,7 +91,7 @@ const projects = [
     tags: ['Flutter', 'Dart', 'Supabase', 'Mobile'],
     github: 'https://github.com/esumbrandon/lilyFit',
     demo: '#',
-    gradient: 'from-pink-500 to-rose-500',
+    gradient: 'from-gray-100 to-gray-300',
   },
   {
     title: 'Portfolio 2.0',
@@ -100,7 +100,7 @@ const projects = [
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React'],
     github: 'https://github.com/esumbrandon/portfolio-2.0',
     demo: '#',
-    gradient: 'from-violet-500 to-indigo-500',
+    gradient: 'from-gray-300 to-gray-500',
   },
   {
     title: 'Redux Counter App',
@@ -109,7 +109,7 @@ const projects = [
     tags: ['React', 'Redux Toolkit', 'TypeScript'],
     github: '#',
     demo: '#',
-    gradient: 'from-cyan-500 to-blue-500',
+    gradient: 'from-gray-500 to-gray-700',
   },
 ];
 
@@ -128,7 +128,7 @@ export default function App() {
           className="absolute inset-0 opacity-[0.055]"
           style={{
             backgroundImage:
-              'radial-gradient(circle at 1px 1px, rgba(167,139,250,0.7) 1px, transparent 0)',
+              'radial-gradient(circle at 1px 1px, rgba(0,0,0,0.7) 1px, transparent 0)',
             backgroundSize: '48px 48px',
           }}
         />
@@ -139,7 +139,7 @@ export default function App() {
         />
         <div
           className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] rounded-full opacity-[0.06] blur-[100px] pointer-events-none"
-          style={{ background: '#06b6d4' }}
+          style={{ background: '#818181' }}
         />
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 w-full">
