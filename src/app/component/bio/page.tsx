@@ -22,7 +22,7 @@ const Bio = () => {
               style={{
                 background: 'var(--bg-card)',
                 borderColor: 'var(--border)',
-                color: 'var(--accent-light)',
+                color: 'var(--text-secondary)',
               }}
             >
               About Me
@@ -99,7 +99,7 @@ const Bio = () => {
                     className="h-full rounded-full"
                     style={{
                       width: `${skill.level}%`,
-                      background: 'linear-gradient(90deg, var(--accent), #06b6d4)',
+                      background: 'var(--accent)',
                     }}
                   />
                 </div>

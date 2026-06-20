@@ -1,3 +1,5 @@
+"use client";
+
 import Image from 'next/image';
 import LogoTrans from './Assets/Logo/logoTransp.png';
 
@@ -23,7 +25,10 @@ const NavBar = () => {
             <a
               key={label}
               href={href}
-              className="text-sm font-medium text-slate-400 hover:text-purple-400 transition-colors duration-200"
+              className="text-sm font-medium transition-colors duration-200"
+              style={{ color: 'var(--text-secondary)', '--hover-color': 'var(--text-primary)' }}
+              onMouseOver={(e) => e.currentTarget.style.color = 'var(--hover-color)'}
+              onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}
             >
               {label}
             </a>
@@ -31,8 +36,8 @@ const NavBar = () => {
 
           <a
             href="/#contact"
-            className="px-4 py-2 rounded-lg text-sm font-semibold text-white transition-all duration-200 hover:scale-105 hover:brightness-110"
-            style={{ background: 'var(--accent)' }}
+            className="px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 hover:scale-105"
+            style={{ background: 'var(--accent)', color: 'var(--bg-primary)' }}
           >
             Contact
           </a>

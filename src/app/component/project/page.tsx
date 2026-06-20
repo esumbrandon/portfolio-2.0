@@ -6,7 +6,6 @@ const projects = [
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React'],
     github: 'https://github.com/esumbrandon/portfolio-2.0',
     demo: '#',
-    gradient: 'from-violet-500 to-indigo-500',
   },
   {
     title: 'Redux Counter App',
@@ -15,7 +14,6 @@ const projects = [
     tags: ['React', 'Redux Toolkit', 'TypeScript'],
     github: '#',
     demo: '#',
-    gradient: 'from-cyan-500 to-blue-500',
   },
   {
     title: 'Weather Dashboard',
@@ -24,7 +22,6 @@ const projects = [
     tags: ['Next.js', 'API', 'JavaScript', 'CSS'],
     github: '#',
     demo: '#',
-    gradient: 'from-emerald-500 to-teal-500',
   },
 ];
 
@@ -42,7 +39,7 @@ const Project = () => {
             style={{
               background: 'var(--bg-card)',
               borderColor: 'var(--border)',
-              color: 'var(--accent-light)',
+              color: 'var(--text-secondary)',
             }}
           >
             My Work
@@ -67,8 +64,8 @@ const Project = () => {
               className="rounded-2xl border overflow-hidden card-hover flex flex-col"
               style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
             >
-              {/* Gradient top accent bar */}
-              <div className={`h-1.5 bg-gradient-to-r ${project.gradient}`} />
+              {/* Accent bar */}
+              <div className="h-1.5" style={{ background: 'var(--accent)' }} />
 
               <div className="p-6 flex flex-col flex-1">
                 <h3
@@ -92,7 +89,7 @@ const Project = () => {
                       className="px-2.5 py-1 rounded-md text-xs font-medium border"
                       style={{
                         background: 'var(--bg-secondary)',
-                        color: 'var(--accent-light)',
+                        color: 'var(--text-secondary)',
                         borderColor: 'var(--border)',
                       }}
                     >
@@ -107,15 +104,15 @@ const Project = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 py-2 rounded-lg text-sm font-medium text-center border transition-all duration-200 hover:border-purple-500"
+                    className="flex-1 py-2 rounded-lg text-sm font-medium text-center border transition-all duration-200"
                     style={{ borderColor: 'var(--border)', color: 'var(--text-secondary)' }}
                   >
                     GitHub
                   </a>
                   <a
                     href={project.demo}
-                    className="flex-1 py-2 rounded-lg text-sm font-medium text-center text-white transition-all duration-200 hover:opacity-90 hover:scale-105"
-                    style={{ background: 'var(--accent)' }}
+                    className="flex-1 py-2 rounded-lg text-sm font-medium text-center transition-all duration-200 hover:opacity-90 hover:scale-105"
+                    style={{ background: 'var(--accent)', color: 'var(--bg-primary)' }}
                   >
                     Live Demo
                   </a>
@@ -132,9 +129,10 @@ const Project = () => {
           </p>
           <a
             href="mailto:brandon@example.com"
-            className="inline-flex px-8 py-3.5 rounded-xl font-semibold text-white transition-all duration-200 hover:scale-105"
+            className="inline-flex px-8 py-3.5 rounded-xl font-semibold transition-all duration-200 hover:scale-105"
             style={{
-              background: 'linear-gradient(135deg, var(--accent), #4f46e5)',
+              background: 'var(--accent)',
+              color: 'var(--bg-primary)',
               boxShadow: '0 0 30px var(--accent-glow)',
             }}
           >

@@ -4,7 +4,7 @@ import LineZero from './lineZero';
 
 const Home = () => {
   return (
-    <div style={{ background: 'var(--bg-primary)' }}>
+    <div>
       <Information />
       <LineZero />
       <Details />
