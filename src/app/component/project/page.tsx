@@ -1,27 +1,39 @@
 const projects = [
   {
+    title: 'ClanWatch',
+    subtitle: 'Real-Time Family Safety, Crash Telematics & SOS Platform',
+    description:
+      'A production-grade family security application combining high-accuracy live GPS location sharing, PostGIS-backed geofencing, accelerometer-powered vehicle crash detection (>4.5G deceleration), offline SMS fallbacks, and real-time STOMP WebSocket emergency broadcasting across a role-based household model. Built with Flutter & Dart on mobile and Java 21 Spring Boot 4.1 with PostgreSQL + PostGIS & Spring Security on the backend.',
+    tags: ['Flutter', 'Dart', 'Java 21', 'Spring Boot', 'PostgreSQL', 'PostGIS', 'WebSockets', 'Google Maps'],
+    github: 'https://github.com/esumbrandon',
+    demo: 'https://github.com/esumbrandon',
+  },
+  {
+    title: 'LilyFit',
+    subtitle: 'Advanced Fitness & Nutrition Tracking Application',
+    description:
+      'Independently designed and architected a production-ready iOS and Android application using Flutter and Dart. Incorporates native platform channels (Kotlin/Java on Android, Swift/Objective-C on iOS) for low-level OS/device access, automated BMI tracking, hydration monitoring, weight analytics, and a dynamic macro/calorie goal calculation engine. Powered by Supabase and PostgreSQL for secure relational user logs and analytics.',
+    tags: ['Flutter', 'Dart', 'Kotlin', 'Swift', 'Supabase', 'PostgreSQL', 'PlantUML'],
+    github: 'https://github.com/esumbrandon/lilyFit',
+    demo: 'https://github.com/esumbrandon/lilyFit',
+  },
+  {
+    title: 'PSD2 & Open Finance Banking Platform',
+    subtitle: 'Berlin Group Specification V2 Implementation',
+    description:
+      'High-security banking API microservice suite implementing the Berlin Group Specification V2 for PSD2 and Open Finance compliance. Features Keycloak IAM integration, customized FAPI security profiles, OAuth2/OpenID Connect flows, ACID transaction handling, and an Angular management console routed and cached via Nginx reverse proxies.',
+    tags: ['Java', 'Spring Boot', 'Spring Security', 'Keycloak', 'Angular', 'Nginx', 'Docker', 'PostgreSQL'],
+    github: 'https://github.com/esumbrandon',
+    demo: 'https://github.com/esumbrandon',
+  },
+  {
     title: 'Portfolio 2.0',
+    subtitle: 'High-Performance Developer Portfolio & Beta Portal',
     description:
-      'A modern, responsive portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. Features a dark theme, smooth layout, and clean component architecture.',
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React'],
+      'A modern, fully responsive personal portfolio and beta testing platform built with Next.js 14 App Router, TypeScript, and Tailwind CSS. Features custom monochrome design tokens, glassmorphism UI, client-side test-user management with CSV export capability, and clean SEO architecture.',
+    tags: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'React', 'Jest'],
     github: 'https://github.com/esumbrandon/portfolio-2.0',
-    demo: '#',
-  },
-  {
-    title: 'Redux Counter App',
-    description:
-      'A state management demo using Redux Toolkit with React. Showcases slice patterns, actions, and real-time state updates with a clean, minimal UI.',
-    tags: ['React', 'Redux Toolkit', 'TypeScript'],
-    github: '#',
-    demo: '#',
-  },
-  {
-    title: 'Weather Dashboard',
-    description:
-      'A weather web app displaying real-time data. Built with Next.js and integrating a third-party weather API to provide live forecasts and city search.',
-    tags: ['Next.js', 'API', 'JavaScript', 'CSS'],
-    github: '#',
-    demo: '#',
+    demo: 'https://github.com/esumbrandon/portfolio-2.0',
   },
 ];
 
@@ -29,7 +41,7 @@ const Project = () => {
   return (
     <div
       className="min-h-screen"
-      style={{ background: 'var(--bg-primary)', paddingTop: '96px' }}
+      style={{ background: 'var(--bg-primary)', paddingTop: '96px', color: 'var(--text-primary)' }}
     >
       <section className="max-w-6xl mx-auto px-6 py-20">
         {/* Header */}
@@ -39,10 +51,10 @@ const Project = () => {
             style={{
               background: 'var(--bg-card)',
               borderColor: 'var(--border)',
-              color: 'var(--text-secondary)',
+              color: 'var(--text-primary)',
             }}
           >
-            My Work
+            Selected Work
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Featured <span className="gradient-text">Projects</span>
@@ -51,13 +63,12 @@ const Project = () => {
             className="text-lg max-w-xl mx-auto"
             style={{ color: 'var(--text-secondary)' }}
           >
-            A collection of projects I&apos;ve built to solve problems and explore new
-            technologies.
+            A collection of production platforms, mobile applications, and open-source systems.
           </p>
         </div>
 
         {/* Project cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project) => (
             <div
               key={project.title}
@@ -69,11 +80,14 @@ const Project = () => {
 
               <div className="p-6 flex flex-col flex-1">
                 <h3
-                  className="text-xl font-bold mb-3"
+                  className="text-xl font-bold mb-1"
                   style={{ color: 'var(--text-primary)' }}
                 >
                   {project.title}
                 </h3>
+                <p className="text-xs font-medium mb-3" style={{ color: 'var(--text-secondary)' }}>
+                  {project.subtitle}
+                </p>
                 <p
                   className="text-sm leading-relaxed mb-6 flex-1"
                   style={{ color: 'var(--text-secondary)' }}
@@ -82,14 +96,14 @@ const Project = () => {
                 </p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-1.5 mb-6">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
                       className="px-2.5 py-1 rounded-md text-xs font-medium border"
                       style={{
-                        background: 'var(--bg-secondary)',
-                        color: 'var(--text-secondary)',
+                        background: 'var(--bg-primary)',
+                        color: 'var(--text-primary)',
                         borderColor: 'var(--border)',
                       }}
                     >
@@ -104,17 +118,27 @@ const Project = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 py-2 rounded-lg text-sm font-medium text-center border transition-all duration-200"
-                    style={{ borderColor: 'var(--border)', color: 'var(--text-secondary)' }}
+                    className="flex-1 py-2.5 rounded-lg text-sm font-semibold text-center border transition-all duration-200 hover:scale-[1.02]"
+                    style={{
+                      background: 'var(--bg-primary)',
+                      borderColor: 'var(--border)',
+                      color: 'var(--text-primary)',
+                    }}
                   >
-                    GitHub
+                    GitHub Repo
                   </a>
                   <a
                     href={project.demo}
-                    className="flex-1 py-2 rounded-lg text-sm font-medium text-center transition-all duration-200 hover:opacity-90 hover:scale-105"
-                    style={{ background: 'var(--accent)', color: 'var(--bg-primary)' }}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 py-2.5 rounded-lg text-sm font-semibold text-center border transition-all duration-200 hover:scale-[1.02]"
+                    style={{
+                      background: 'var(--accent)',
+                      borderColor: 'var(--border)',
+                      color: 'var(--text-primary)',
+                    }}
                   >
-                    Live Demo
+                    Project Details
                   </a>
                 </div>
               </div>
@@ -125,14 +149,15 @@ const Project = () => {
         {/* CTA */}
         <div className="text-center mt-20">
           <p className="text-lg mb-6" style={{ color: 'var(--text-secondary)' }}>
-            Want to see more or collaborate on something?
+            Want to collaborate on a project or discuss an engineering role?
           </p>
           <a
-            href="mailto:brandon@example.com"
-            className="inline-flex px-8 py-3.5 rounded-xl font-semibold transition-all duration-200 hover:scale-105"
+            href="mailto:esumbrandon074@gmail.com"
+            className="inline-flex px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105"
             style={{
               background: 'var(--accent)',
-              color: 'var(--bg-primary)',
+              borderColor: 'var(--border)',
+              color: 'var(--text-primary)',
               boxShadow: '0 0 30px var(--accent-glow)',
             }}
           >
