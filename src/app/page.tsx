@@ -2,120 +2,168 @@ import Image from 'next/image';
 import MeImage from './component/nav/Assets/Logo/me.png';
 import TestUsersSection from './component/test-users/page';
 
-const skills = [
-  // Languages
-  { name: 'Java', category: 'Language' },
-  { name: 'C', category: 'Language' },
-  { name: 'C++', category: 'Language' },
-  { name: 'JavaScript', category: 'Language' },
-  { name: 'TypeScript', category: 'Language' },
-  { name: 'Dart', category: 'Language' },
-  { name: 'Kotlin', category: 'Language' },
-  { name: 'Python', category: 'Language' },
-  // Frameworks
-  { name: 'Spring Boot', category: 'Framework' },
-  { name: 'Spring', category: 'Framework' },
-  { name: 'Node.js', category: 'Framework' },
-  { name: 'React', category: 'Framework' },
-  { name: 'Next.js', category: 'Framework' },
-  { name: 'Angular', category: 'Framework' },
-  { name: 'Flutter', category: 'Framework' },
-  { name: 'React Native', category: 'Framework' },
-  // Cloud & DevOps
-  { name: 'AWS', category: 'Cloud' },
-  { name: 'Docker', category: 'Cloud' },
-  { name: 'Kubernetes', category: 'Cloud' },
-  { name: 'CI/CD', category: 'Cloud' },
-  // Databases & Tools
-  { name: 'PostgreSQL', category: 'Database' },
-  { name: 'SQL', category: 'Database' },
-  { name: 'Git / GitHub', category: 'Tools' },
-  { name: 'Figma', category: 'Tools' },
+const skillCategories = [
+  {
+    category: 'Languages',
+    skills: ['Java', 'TypeScript', 'JavaScript', 'Dart', 'Python', 'Kotlin', 'Swift', 'C', 'C++'],
+  },
+  {
+    category: 'Backend & Security',
+    skills: [
+      'Spring Boot',
+      'Spring Security',
+      'Keycloak',
+      'OAuth2 / OIDC',
+      'REST APIs',
+      'Microservices',
+      'Node.js',
+      'Express',
+      'Django',
+      'FAPI Security Profiles',
+    ],
+  },
+  {
+    category: 'Frontend & Mobile',
+    skills: ['React', 'Next.js', 'Angular', 'Flutter', 'React Native', 'SwiftUI', 'HTML5', 'CSS3', 'Tailwind CSS'],
+  },
+  {
+    category: 'Databases & Storage',
+    skills: ['PostgreSQL', 'SQL', 'MariaDB', 'MySQL', 'Oracle', 'MongoDB', 'Supabase'],
+  },
+  {
+    category: 'Cloud & DevOps',
+    skills: ['AWS', 'Docker', 'Kubernetes', 'CI/CD Pipelines', 'Linux', 'Nginx', 'GitLab CI'],
+  },
+  {
+    category: 'Architecture, AI & Tools',
+    skills: [
+      'Microservices Architecture',
+      'System Design',
+      'PSD2 / Open Finance APIs',
+      'AI Agents & Prompt Engineering',
+      'TDD (JUnit, Mockito, Karma)',
+      'Postman & OpenAPI',
+      'Git & GitHub',
+      'Figma & Adobe XD',
+      'Agile / Scrum',
+    ],
+  },
 ];
-
-const categoryColors: Record<string, string> = {
-  Language: '#626972',
-  Framework: '#000000',
-  Cloud: '#808a8a',
-  Database: '#000000',
-  Tools: '#6c6c6b',
-};
 
 const experience = [
   {
-    role: 'Full-Stack Software Engineer — Seniorxx',
-    company: 'Adorsys GmbH',
-    period: 'previous',
+    role: 'Senior Software Engineer / Senior Backend Engineer',
+    company: 'adorsys GmbH',
+    period: '03/2024 — 04/2026',
+    location: 'Remote',
     current: false,
     highlights: [
-      'Banking APIs with Java, Spring Boot, Spring Security & OAuth2 using Keycloak',
-      'Implemented PSD2 & Open Finance API (Berlin Group Spec V2) with Keycloak',
-      'Customized FAPI security profiles, OAuth2 & OpenID Connect flows',
-      'DevOps with Docker, Kubernetes & AWS; AI agent & prompt engineering automation',
+      'Developed and maintained secure banking APIs using Java, Spring Boot, Spring Security, OAuth2, and OpenID Connect for PSD2 & Open Finance solutions.',
+      'Played a key role in implementing the Berlin Group Specification V2 APIs, serving as second-in-command to the Technical Lead for compliance & architecture.',
+      'Integrated Keycloak Identity & Access Management (IAM) for authentication workflows in xs2a V2, customizing FAPI security profiles and OAuth2 authorization flows.',
+      'Built and maintained frontend banking interface using TypeScript and Angular, configuring Nginx for microservices reverse proxying, API routing, and caching.',
+      'Engineered financial transaction workflows, payment systems, and banking simulations adhering strictly to ACID principles.',
+      'Designed scalable backend microservices architectures and maintained DevOps workflows with Docker, Kubernetes, AWS, and GitLab CI/CD.',
+      'Enforced Test-Driven Development (TDD) using Spring Boot Starter Test, JUnit, Mockito, Karma, and Jasmine; validated APIs with Postman & OpenAPI collections.',
+      'Mentored engineering team members on software engineering best practices, code reviews, and Agile Scrum delivery.',
     ],
-    gradient: 'from-gray-300 to-gray-100',
   },
   {
-    role: 'Full-Stack Software Engineer — Ex-Co-Founder',
+    role: 'Co-Founder & Full-Stack Software Engineer',
     company: 'BridgeLabs',
-    period: 'Previous',
+    period: '02/2022 — 10/2023',
+    location: 'Remote',
     current: false,
     highlights: [
-      'Led full SDLC for web & mobile solutions — requirement gathering to production',
-      'Frontend with React & React Native; migrated mobile apps to Flutter/Dart',
-      'Created architectural designs and low/high-fidelity UI/UX designs',
-      'Team Lead: mentored developers and coordinated project milestones',
+      'Co-founded a software venture delivering scalable web and mobile applications across the complete SDLC from requirement gathering to cloud deployment.',
+      'Designed and developed full-stack web applications using React, JavaScript, TypeScript, and Node.js with responsive Material UI and Tailwind CSS interfaces.',
+      'Migrated client mobile applications from React Native to Flutter & Dart, boosting runtime performance, reducing APK size, and improving cross-platform maintainability.',
+      'Architected system blueprints and designed low/high-fidelity UI/UX prototypes with Adobe XD and Figma.',
+      'Modernized legacy codebases through microservices refactoring and containerized deployments using Docker on AWS cloud infrastructure.',
+      'Led engineering teams, conducted code reviews, managed GitHub repositories, and coordinated software delivery milestones.',
     ],
-    gradient: 'from-gray-400 to-gray-200',
   },
   {
-    role: 'Full-Stack Software Engineer',
-    company: 'Bohiko',
-    period: 'Previous',
+    role: 'Mobile Application Developer / Full-Stack Engineer (Intern)',
+    company: 'Bohiko (Bohikor)',
+    period: '02/2021 — 11/2021',
+    location: 'Buea, Cameroon',
     current: false,
     highlights: [
-      'Built and maintained backend systems: databases, servers & REST APIs',
-      'Designed & implemented CI/CD build and deployment pipelines',
-      'Containerized applications using Docker on Linux environments',
-      'Translated Figma UI/UX designs into functional web applications',
+      'Developed and maintained fintech mobile application for personal finance and budget management connected to Spring Boot backend services.',
+      'Built cross-platform mobile applications using React Native and migrated core modules to Flutter for superior performance and smaller bundle size.',
+      'Implemented CI/CD pipelines and automated containerized deployment workflows using Docker on Linux environments.',
+      'Optimized application performance through debugging, unit testing, and rigorous code quality improvements.',
+      'Collaborated closely with UI/UX designers using Figma to deliver responsive, accessible user interfaces.',
     ],
-    gradient: 'from-gray-200 to-white',
   },
 ];
 
 const projects = [
   {
-    title: 'LilyFit',
+    title: 'ClanWatch',
+    subtitle: 'Real-Time Family Safety, Crash Telematics & SOS Platform',
     description:
-      'A mobile fitness and nutrition app that lets users log their carb intake, monitor macros, and manage their fitness goals. Built with Flutter and Dart, powered by Supabase for real-time data and authentication.',
-    tags: ['Flutter', 'Dart', 'Supabase', 'Mobile'],
+      'A production-grade family security application combining high-accuracy live GPS location sharing, PostGIS-backed geofencing, accelerometer-powered vehicle crash detection (>4.5G deceleration), offline SMS fallbacks, and real-time STOMP WebSocket emergency broadcasting across a role-based household model. Built with Flutter & Dart on mobile and Java 21 Spring Boot 4.1 with PostgreSQL + PostGIS & Spring Security on the backend.',
+    tags: ['Flutter', 'Dart', 'Java 21', 'Spring Boot', 'PostgreSQL', 'PostGIS', 'WebSockets', 'Google Maps'],
+    github: 'https://github.com/esumbrandon/clan-watch',
+    demo: 'https://github.com/esumbrandon',
+  },
+  {
+    title: 'LilyFit',
+    subtitle: 'Advanced Fitness & Nutrition Tracking Application',
+    description:
+      'Independently designed and architected a production-ready iOS and Android application using Flutter and Dart. Incorporates native platform channels (Kotlin/Java on Android, Swift/Objective-C on iOS) for low-level OS/device access, automated BMI tracking, hydration monitoring, weight analytics, and a dynamic macro/calorie goal calculation engine. Powered by Supabase and PostgreSQL for secure relational user logs and analytics.',
+    tags: ['Flutter', 'Dart', 'Kotlin', 'Swift', 'Supabase', 'PostgreSQL', 'PlantUML'],
     github: 'https://github.com/esumbrandon/lilyFit',
-    demo: '#',
-    gradient: 'from-gray-100 to-gray-300',
+    demo: 'https://github.com/esumbrandon/lilyFit',
   },
   {
     title: 'Portfolio 2.0',
+    subtitle: 'High-Performance Developer Portfolio & Beta Portal',
     description:
-      'A modern, responsive portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. Features a dark theme, smooth scroll, and clean component architecture.',
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React'],
+      'A modern, fully responsive personal portfolio and beta testing platform built with Next.js 14 App Router, TypeScript, and Tailwind CSS. Features custom monochrome design tokens, glassmorphism UI, client-side test-user management with CSV export capability, and clean SEO architecture.',
+    tags: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'React', 'Jest'],
     github: 'https://github.com/esumbrandon/portfolio-2.0',
-    demo: '#',
-    gradient: 'from-gray-300 to-gray-500',
+    demo: 'https://github.com/esumbrandon/portfolio-2.0',
+  },
+];
+
+const education = [
+  {
+    institution: 'University of Buea, Cameroon',
+    degree: 'Bachelor of Engineering (B.Eng) in Computer Software Engineering',
+    period: 'Graduated 2022',
+    detail: 'Graduated with First Class Upper honours (GPA: 3.60 / 4.0). Focused on software architecture, algorithms, database systems, distributed computing, and systems programming.',
   },
   {
-    title: 'Redux Counter App',
-    description:
-      'A state management demo using Redux Toolkit with React. Showcases slice patterns, actions, and real-time state updates with a clean, minimal UI.',
-    tags: ['React', 'Redux Toolkit', 'TypeScript'],
-    github: '#',
-    demo: '#',
-    gradient: 'from-gray-500 to-gray-700',
+    institution: 'Summerset Bilingual College, Buea',
+    degree: 'Advance Level Certificate (A/L) in Science',
+    period: 'Secondary Education',
+    detail: 'Studies in Mathematics, Physics, Chemistry, Biology, and Computer Science.',
   },
+  {
+    institution: 'Nabesk Comprehensive College, Buea',
+    degree: 'Ordinary Level Certificate (O/L) in Science',
+    period: 'Secondary Education',
+    detail: 'Comprehensive curriculum in Mathematics, Physics, Chemistry, Computer Science, Biology, and languages.',
+  },
+  {
+    institution: "ST Mary's Primary School, Tiko, Cameroon",
+    degree: 'First School Leaving Certificate (FSLC)',
+    period: 'Primary Education',
+    detail: 'Class 1 through 6 with First School Leaving Certificate & Common Entrance.',
+  },
+];
+
+const languages = [
+  { name: 'English', level: 'Native / Fluent' },
+  { name: 'French', level: 'Professional Working Proficiency' },
 ];
 
 export default function App() {
   return (
-    <div style={{ background: 'var(--bg-primary)' }}>
+    <div style={{ background: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
 
       {/* ─────────────── HERO ─────────────── */}
       <section
@@ -125,71 +173,77 @@ export default function App() {
       >
         {/* dot-grid */}
         <div
-          className="absolute inset-0 opacity-[0.055]"
+          className="absolute inset-0 opacity-10 pointer-events-none"
           style={{
             backgroundImage:
-              'radial-gradient(circle at 1px 1px, rgba(0,0,0,0.7) 1px, transparent 0)',
-            backgroundSize: '48px 48px',
+              'radial-gradient(circle at 1px 1px, var(--text-primary) 1px, transparent 0)',
+            backgroundSize: '40px 40px',
           }}
         />
+
         {/* glow orbs */}
         <div
-          className="absolute top-1/4 right-1/3 w-[600px] h-[600px] rounded-full opacity-[0.09] blur-[140px] pointer-events-none"
-          style={{ background: 'var(--accent)' }}
+          className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full opacity-20 blur-[140px] pointer-events-none"
+          style={{ background: 'var(--accent-light)' }}
         />
         <div
-          className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] rounded-full opacity-[0.06] blur-[100px] pointer-events-none"
-          style={{ background: '#818181' }}
+          className="absolute bottom-1/4 left-1/4 w-[450px] h-[450px] rounded-full opacity-15 blur-[120px] pointer-events-none"
+          style={{ background: 'var(--accent-cyan)' }}
         />
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 w-full">
           <div
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-8 border"
+            className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs font-medium mb-8 border"
             style={{
               background: 'var(--bg-card)',
               borderColor: 'var(--border)',
-              color: 'var(--accent-light)',
+              color: 'var(--text-primary)',
             }}
           >
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            Available for opportunities
+            <span
+              className="w-2 h-2 rounded-full animate-pulse"
+              style={{ background: 'var(--text-primary)' }}
+            />
+            Available for Senior &amp; Full-Stack Opportunities
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 leading-[1.05] tracking-tight">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-4 leading-[1.08] tracking-tight">
             Hi, I&apos;m{' '}
-            <span className="gradient-text">Esum Brandon</span>
+            <span className="gradient-text">Esum Brandon Oben</span>
           </h1>
 
           <p
             className="text-2xl md:text-3xl font-semibold mb-6"
             style={{ color: 'var(--text-secondary)' }}
           >
-            Full-Stack Software Engineer
+            Full-Stack Software Engineer &amp; Backend Specialist
           </p>
 
           <p
-            className="text-lg max-w-2xl mb-10 leading-relaxed"
+            className="text-lg max-w-3xl mb-10 leading-relaxed"
             style={{ color: 'var(--text-secondary)' }}
           >
-            6+ years designing, developing, and deploying scalable software solutions and
-            microservices. Specialized in Banking APIs, Web &amp; Mobile applications, and
-            Cloud-native architectures.
+            7 years of experience designing, developing, deploying, and maintaining scalable banking platforms,
+            APIs, microservices, and cross-platform mobile apps. Strong expertise in Java/Spring Boot, PSD2 &amp;
+            Open Finance compliance (Berlin Group Spec V2), Keycloak IAM, Angular, React, Next.js, and Flutter.
           </p>
 
           <div className="flex flex-wrap gap-4">
             <a
               href="#projects"
-              className="px-8 py-3.5 rounded-xl font-semibold text-white transition-all duration-200 hover:scale-105 hover:brightness-110"
+              className="px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105"
               style={{
-                background: 'linear-gradient(135deg, var(--accent), #4f46e5)',
+                background: 'var(--accent)',
+                borderColor: 'var(--border)',
+                color: 'var(--text-primary)',
                 boxShadow: '0 0 32px var(--accent-glow)',
               }}
             >
-              View My Work
+              View Featured Work
             </a>
             <a
               href="#about"
-              className="px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105 hover:border-purple-500"
+              className="px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105"
               style={{
                 borderColor: 'var(--border)',
                 color: 'var(--text-primary)',
@@ -198,21 +252,32 @@ export default function App() {
             >
               About Me
             </a>
+            <a
+              href="#contact"
+              className="px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105"
+              style={{
+                borderColor: 'var(--border)',
+                color: 'var(--text-primary)',
+                background: 'var(--bg-secondary)',
+              }}
+            >
+              Contact
+            </a>
           </div>
         </div>
 
         {/* scroll hint */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-25 pointer-events-none">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40 pointer-events-none">
           <span
-            className="text-xs tracking-[0.2em] uppercase"
+            className="text-xs tracking-[0.2em] uppercase font-semibold"
             style={{ color: 'var(--text-secondary)' }}
           >
             scroll
           </span>
           <div
-            className="w-px h-14"
+            className="w-px h-12"
             style={{
-              background: 'linear-gradient(to bottom, var(--accent), transparent)',
+              background: 'linear-gradient(to bottom, var(--text-primary), transparent)',
             }}
           />
         </div>
@@ -230,20 +295,21 @@ export default function App() {
             <div className="flex justify-center">
               <div className="relative">
                 <div
-                  className="absolute -inset-3 rounded-3xl blur-2xl opacity-25"
+                  className="absolute -inset-4 rounded-3xl blur-2xl opacity-40"
                   style={{
-                    background: 'linear-gradient(135deg, var(--accent), #06b6d4)',
+                    background: 'var(--accent-glow)',
                   }}
                 />
                 <div
-                  className="relative rounded-3xl overflow-hidden border"
-                  style={{ borderColor: 'var(--border)' }}
+                  className="relative rounded-3xl overflow-hidden border shadow-xl"
+                  style={{ borderColor: 'var(--border)', background: 'var(--bg-card)' }}
                 >
                   <Image
                     src={MeImage}
-                    alt="Brandon"
+                    alt="Esum Brandon Oben"
                     width={400}
                     height={400}
+                    priority
                     className="object-cover"
                   />
                 </div>
@@ -257,49 +323,49 @@ export default function App() {
                 style={{
                   background: 'var(--bg-card)',
                   borderColor: 'var(--border)',
-                  color: 'var(--accent-light)',
+                  color: 'var(--text-primary)',
                 }}
               >
-                About Me
+                Professional Background
               </div>
 
               <h2 className="text-4xl font-bold mb-6 leading-tight">
-                Passionate about{' '}
-                <span className="gradient-text">building</span> great software
+                Architecting <span className="gradient-text">resilient systems</span> &amp; modern apps
               </h2>
 
               <p
-                className="text-lg leading-relaxed mb-4"
+                className="text-base md:text-lg leading-relaxed mb-4"
                 style={{ color: 'var(--text-secondary)' }}
               >
-                I&apos;m Esum Brandon Oben, a Full-Stack Software Engineer with 6–7 years of
-                experience designing, developing, deploying, and maintaining scalable software
-                solutions and microservices.
+                I&apos;m Esum Brandon Oben, a Full-Stack Software Engineer with 7 years of experience
+                building high-throughput banking systems, microservices, cloud infrastructure, and responsive web &amp; mobile
+                applications.
               </p>
 
               <p
-                className="text-lg leading-relaxed mb-8"
+                className="text-base md:text-lg leading-relaxed mb-8"
                 style={{ color: 'var(--text-secondary)' }}
               >
-                Specialized in Banking APIs, PSD2/Open Finance compliance, Web &amp; Mobile
-                development, and Cloud-native architectures. Currently a Senior Engineer at
-                Adorsys GmbH, working on open banking infrastructure used across Europe.
+                At <strong>adorsys GmbH</strong>, I contributed to European Open Banking infrastructure,
+                implementing the Berlin Group Specification V2, Keycloak IAM integration, FAPI security profiles,
+                and transactional ACID systems. Previously, as Co-Founder at <strong>BridgeLabs</strong>, I led full-stack web
+                and cross-platform mobile products for multiple clients from architecture to production.
               </p>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {[
-                  { value: '6+', label: 'Years Experience' },
-                  { value: '3', label: 'Companies' },
-                  { value: '15+', label: 'Technologies' },
-                  { value: '100%', label: 'Dedication' },
+                  { value: '7+', label: 'Years Exp.' },
+                  { value: '3+', label: 'Companies/Ventures' },
+                  { value: '20+', label: 'Core Technologies' },
+                  { value: '3.60', label: 'B.Eng GPA (1st Class)' },
                 ].map((stat) => (
                   <div
                     key={stat.label}
-                    className="p-4 rounded-xl border card-hover"
+                    className="p-4 rounded-xl border card-hover text-center"
                     style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
                   >
-                    <div className="text-3xl font-bold gradient-text">{stat.value}</div>
-                    <div className="text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>
+                    <div className="text-2xl font-bold gradient-text">{stat.value}</div>
+                    <div className="text-xs mt-1 font-medium" style={{ color: 'var(--text-secondary)' }}>
                       {stat.label}
                     </div>
                   </div>
@@ -323,36 +389,48 @@ export default function App() {
               style={{
                 background: 'var(--bg-card)',
                 borderColor: 'var(--border)',
-                color: 'var(--accent-light)',
+                color: 'var(--text-primary)',
               }}
             >
-              What I Use
+              Technical Expertise
             </div>
             <h2 className="text-4xl font-bold mb-4">
-              Tech <span className="gradient-text">Stack</span>
+              Comprehensive <span className="gradient-text">Tech Stack</span>
             </h2>
-            <p style={{ color: 'var(--text-secondary)' }}>
-              Technologies I use to build modern web applications
+            <p className="max-w-xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
+              Battle-tested technologies, frameworks, and architecture paradigms utilized across 7 years of engineering.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {skills.map((skill) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {skillCategories.map((group) => (
               <div
-                key={skill.name}
-                className="p-5 rounded-xl border card-hover flex flex-col gap-2"
+                key={group.category}
+                className="p-6 rounded-2xl border card-hover flex flex-col"
                 style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
               >
-                <div
-                  className="w-2.5 h-2.5 rounded-full"
-                  style={{ background: categoryColors[skill.category] || 'var(--accent)' }}
-                />
-                <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>
-                  {skill.name}
-                </span>
-                <span className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-                  {skill.category}
-                </span>
+                <div className="flex items-center gap-2.5 mb-4 pb-3 border-b" style={{ borderColor: 'var(--border)' }}>
+                  <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'var(--text-primary)' }} />
+                  <h3 className="font-bold text-lg" style={{ color: 'var(--text-primary)' }}>
+                    {group.category}
+                  </h3>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {group.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1.5 rounded-lg text-xs font-medium border"
+                      style={{
+                        background: 'var(--bg-primary)',
+                        borderColor: 'var(--border)',
+                        color: 'var(--text-primary)',
+                      }}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
@@ -372,60 +450,63 @@ export default function App() {
               style={{
                 background: 'var(--bg-card)',
                 borderColor: 'var(--border)',
-                color: 'var(--accent-light)',
+                color: 'var(--text-primary)',
               }}
             >
-              Work History
+              Career History
             </div>
             <h2 className="text-4xl font-bold mb-4">
-              Work <span className="gradient-text">Experience</span>
+              Professional <span className="gradient-text">Experience</span>
             </h2>
             <p style={{ color: 'var(--text-secondary)' }}>
-              Companies I&apos;ve built products and grown with
+              Track record of building mission-critical platforms, leading engineering initiatives, and delivering scalable solutions.
             </p>
           </div>
 
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-8">
             {experience.map((job) => (
               <div
                 key={job.company}
                 className="rounded-2xl border overflow-hidden card-hover"
                 style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
               >
-                <div className={`h-1.5 bg-gradient-to-r ${job.gradient}`} />
+                <div className="h-1.5" style={{ background: 'var(--accent)' }} />
                 <div className="p-6 md:p-8">
-                  <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
+                  <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
                     <div>
-                      <h3 className="text-xl font-bold mb-1" style={{ color: 'var(--text-primary)' }}>
+                      <h3 className="text-xl md:text-2xl font-bold mb-1" style={{ color: 'var(--text-primary)' }}>
                         {job.role}
                       </h3>
-                      <p className="font-semibold" style={{ color: 'var(--accent-light)' }}>
-                        {job.company}
-                      </p>
+                      <div className="flex flex-wrap items-center gap-3 text-sm font-semibold">
+                        <span style={{ color: 'var(--text-primary)' }}>{job.company}</span>
+                        <span style={{ color: 'var(--border)' }}>•</span>
+                        <span style={{ color: 'var(--text-secondary)' }}>{job.location}</span>
+                      </div>
                     </div>
-                    {job.current && (
-                      <span
-                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border"
-                        style={{
-                          background: 'rgba(16,185,129,0.1)',
-                          borderColor: 'rgba(16,185,129,0.3)',
-                          color: '#34d399',
-                        }}
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                        Current
-                      </span>
-                    )}
+                    <div
+                      className="px-3.5 py-1 rounded-full text-xs font-semibold border"
+                      style={{
+                        background: 'var(--bg-secondary)',
+                        borderColor: 'var(--border)',
+                        color: 'var(--text-primary)',
+                      }}
+                    >
+                      {job.period}
+                    </div>
                   </div>
-                  <ul className="grid md:grid-cols-2 gap-x-8 gap-y-2">
+
+                  <ul className="grid md:grid-cols-2 gap-x-8 gap-y-3">
                     {job.highlights.map((point) => (
                       <li
                         key={point}
-                        className="flex items-start gap-2 text-sm leading-relaxed"
+                        className="flex items-start gap-2.5 text-sm leading-relaxed"
                         style={{ color: 'var(--text-secondary)' }}
                       >
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--accent)' }} />
-                        {point}
+                        <span
+                          className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
+                          style={{ background: 'var(--text-primary)' }}
+                        />
+                        <span>{point}</span>
                       </li>
                     ))}
                   </ul>
@@ -440,7 +521,7 @@ export default function App() {
       <section
         id="projects"
         className="py-32 border-t"
-        style={{ borderColor: 'var(--border)' }}
+        style={{ borderColor: 'var(--border)', background: 'var(--bg-secondary)' }}
       >
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -449,35 +530,37 @@ export default function App() {
               style={{
                 background: 'var(--bg-card)',
                 borderColor: 'var(--border)',
-                color: 'var(--accent-light)',
+                color: 'var(--text-primary)',
               }}
             >
-              My Work
+              Selected Engineering Projects
             </div>
             <h2 className="text-4xl font-bold mb-4">
               Featured <span className="gradient-text">Projects</span>
             </h2>
             <p className="max-w-xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
-              A collection of projects I&apos;ve built to solve real problems and explore new
-              technologies.
+              Architectural designs, mobile applications, and open-source contributions.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {projects.map((project) => (
               <div
                 key={project.title}
                 className="rounded-2xl border overflow-hidden card-hover flex flex-col"
                 style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
               >
-                <div className={`h-1.5 bg-gradient-to-r ${project.gradient}`} />
+                <div className="h-1.5" style={{ background: 'var(--accent)' }} />
                 <div className="p-6 flex flex-col flex-1">
                   <h3
-                    className="text-xl font-bold mb-3"
+                    className="text-xl font-bold mb-1"
                     style={{ color: 'var(--text-primary)' }}
                   >
                     {project.title}
                   </h3>
+                  <p className="text-xs font-medium mb-3" style={{ color: 'var(--text-secondary)' }}>
+                    {project.subtitle}
+                  </p>
                   <p
                     className="text-sm leading-relaxed mb-6 flex-1"
                     style={{ color: 'var(--text-secondary)' }}
@@ -485,14 +568,14 @@ export default function App() {
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-1.5 mb-6">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
                         className="px-2.5 py-1 rounded-md text-xs font-medium border"
                         style={{
-                          background: 'var(--bg-secondary)',
-                          color: 'var(--accent-light)',
+                          background: 'var(--bg-primary)',
+                          color: 'var(--text-primary)',
                           borderColor: 'var(--border)',
                         }}
                       >
@@ -506,22 +589,112 @@ export default function App() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 py-2 rounded-lg text-sm font-medium text-center text-slate-400 border transition-all duration-200 hover:border-purple-500 hover:text-purple-400"
-                      style={{ borderColor: 'var(--border)' }}
+                      className="flex-1 py-2.5 rounded-lg text-sm font-semibold text-center border transition-all duration-200 hover:scale-[1.02]"
+                      style={{
+                        background: 'var(--bg-primary)',
+                        borderColor: 'var(--border)',
+                        color: 'var(--text-primary)',
+                      }}
                     >
-                      GitHub
+                      GitHub Repo
                     </a>
                     <a
                       href={project.demo}
-                      className="flex-1 py-2 rounded-lg text-sm font-medium text-center text-white transition-all duration-200 hover:opacity-90 hover:scale-[1.02]"
-                      style={{ background: 'var(--accent)' }}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 py-2.5 rounded-lg text-sm font-semibold text-center border transition-all duration-200 hover:scale-[1.02]"
+                      style={{
+                        background: 'var(--accent)',
+                        borderColor: 'var(--border)',
+                        color: 'var(--text-primary)',
+                      }}
                     >
-                      Live Demo
+                      Project Details
                     </a>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────── EDUCATION & CREDENTIALS ─────────────── */}
+      <section
+        id="education"
+        className="py-32 border-t"
+        style={{ borderColor: 'var(--border)' }}
+      >
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <div
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-6 border"
+              style={{
+                background: 'var(--bg-card)',
+                borderColor: 'var(--border)',
+                color: 'var(--text-primary)',
+              }}
+            >
+              Academic Background
+            </div>
+            <h2 className="text-4xl font-bold mb-4">
+              Education &amp; <span className="gradient-text">Qualifications</span>
+            </h2>
+            <p style={{ color: 'var(--text-secondary)' }}>
+              Formal engineering degree and academic credentials.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            {education.map((edu) => (
+              <div
+                key={edu.institution}
+                className="p-6 rounded-2xl border card-hover flex flex-col justify-between"
+                style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
+              >
+                <div>
+                  <div className="flex items-start justify-between gap-4 mb-2">
+                    <h3 className="text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
+                      {edu.degree}
+                    </h3>
+                    <span
+                      className="text-xs px-2.5 py-1 rounded-full border flex-shrink-0 font-medium"
+                      style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-secondary)' }}
+                    >
+                      {edu.period}
+                    </span>
+                  </div>
+                  <p className="font-semibold text-sm mb-3" style={{ color: 'var(--text-primary)' }}>
+                    {edu.institution}
+                  </p>
+                  <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                    {edu.detail}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Languages */}
+          <div
+            className="rounded-2xl border p-6 max-w-xl mx-auto text-center"
+            style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
+          >
+            <h3 className="font-bold text-lg mb-4" style={{ color: 'var(--text-primary)' }}>
+              Languages
+            </h3>
+            <div className="flex justify-center gap-8">
+              {languages.map((lang) => (
+                <div key={lang.name} className="flex flex-col items-center">
+                  <span className="font-bold text-base" style={{ color: 'var(--text-primary)' }}>
+                    {lang.name}
+                  </span>
+                  <span className="text-xs mt-0.5" style={{ color: 'var(--text-secondary)' }}>
+                    {lang.level}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -535,37 +708,77 @@ export default function App() {
         className="py-32 border-t"
         style={{ borderColor: 'var(--border)', background: 'var(--bg-secondary)' }}
       >
-        <div className="max-w-2xl mx-auto px-6 text-center">
+        <div className="max-w-3xl mx-auto px-6 text-center">
           <div
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-6 border"
             style={{
               background: 'var(--bg-card)',
               borderColor: 'var(--border)',
-              color: 'var(--accent-light)',
+              color: 'var(--text-primary)',
             }}
           >
             Get In Touch
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Let&apos;s Work{' '}
-            <span className="gradient-text">Together</span>
+            Let&apos;s Build <span className="gradient-text">Together</span>
           </h2>
 
           <p
-            className="text-lg mb-10 leading-relaxed"
+            className="text-lg mb-8 leading-relaxed"
             style={{ color: 'var(--text-secondary)' }}
           >
-            Whether you have a project in mind, want to collaborate, or just want to say
-            hello — my inbox is always open.
+            Whether you are looking for a Senior Full-Stack Engineer, want to discuss Open Banking and banking API integrations, or explore engineering collaboration — my inbox is open.
           </p>
+
+          <div
+            className="p-6 rounded-2xl border mb-10 inline-flex flex-col sm:flex-row items-center justify-center gap-6"
+            style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
+          >
+            <div>
+              <span className="text-xs uppercase tracking-wider font-semibold block mb-1" style={{ color: 'var(--text-secondary)' }}>
+                Email
+              </span>
+              <a
+                href="mailto:esumbrandon074@gmail.com"
+                className="font-bold text-sm sm:text-base hover:underline"
+                style={{ color: 'var(--text-primary)' }}
+              >
+                esumbrandon074@gmail.com
+              </a>
+            </div>
+            <div className="hidden sm:block w-px h-8" style={{ background: 'var(--border)' }} />
+            <div>
+              <span className="text-xs uppercase tracking-wider font-semibold block mb-1" style={{ color: 'var(--text-secondary)' }}>
+                Phone
+              </span>
+              <a
+                href="tel:+237673452821"
+                className="font-bold text-sm sm:text-base hover:underline"
+                style={{ color: 'var(--text-primary)' }}
+              >
+                +237 673-452-821
+              </a>
+            </div>
+            <div className="hidden sm:block w-px h-8" style={{ background: 'var(--border)' }} />
+            <div>
+              <span className="text-xs uppercase tracking-wider font-semibold block mb-1" style={{ color: 'var(--text-secondary)' }}>
+                Location
+              </span>
+              <span className="font-bold text-sm sm:text-base" style={{ color: 'var(--text-primary)' }}>
+                Douala, Cameroon / Remote
+              </span>
+            </div>
+          </div>
 
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="mailto:esumbrandon074@gmail.com"
-              className="px-8 py-3.5 rounded-xl font-semibold text-white transition-all duration-200 hover:scale-105 hover:brightness-110"
+              className="px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105"
               style={{
-                background: 'linear-gradient(135deg, var(--accent), #4f46e5)',
+                background: 'var(--accent)',
+                borderColor: 'var(--border)',
+                color: 'var(--text-primary)',
                 boxShadow: '0 0 32px var(--accent-glow)',
               }}
             >
@@ -575,27 +788,27 @@ export default function App() {
               href="https://www.linkedin.com/in/esum-brandon-o-1ba3401b1/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105 hover:border-purple-500"
+              className="px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105"
               style={{
                 borderColor: 'var(--border)',
                 color: 'var(--text-primary)',
                 background: 'var(--bg-card)',
               }}
             >
-              LinkedIn
+              LinkedIn Profile
             </a>
             <a
               href="https://github.com/esumbrandon"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105 hover:border-purple-500"
+              className="px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105"
               style={{
                 borderColor: 'var(--border)',
                 color: 'var(--text-primary)',
                 background: 'var(--bg-card)',
               }}
             >
-              GitHub
+              GitHub Profile
             </a>
           </div>
         </div>
@@ -604,15 +817,16 @@ export default function App() {
       {/* ─────────────── FOOTER ─────────────── */}
       <footer className="py-8 border-t" style={{ borderColor: 'var(--border)' }}>
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-            © 2026 Esum Brandon Oben. all rights reserved.
+          <p className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
+            © 2026 Esum Brandon Oben. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <a
               href="https://github.com/esumbrandon"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-slate-400 hover:text-purple-400 transition-colors duration-200"
+              className="text-sm font-medium transition-colors hover:underline"
+              style={{ color: 'var(--text-secondary)' }}
             >
               GitHub
             </a>
@@ -620,13 +834,15 @@ export default function App() {
               href="https://www.linkedin.com/in/esum-brandon-o-1ba3401b1/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-slate-400 hover:text-purple-400 transition-colors duration-200"
+              className="text-sm font-medium transition-colors hover:underline"
+              style={{ color: 'var(--text-secondary)' }}
             >
               LinkedIn
             </a>
             <a
               href="mailto:esumbrandon074@gmail.com"
-              className="text-sm text-slate-400 hover:text-purple-400 transition-colors duration-200"
+              className="text-sm font-medium transition-colors hover:underline"
+              style={{ color: 'var(--text-secondary)' }}
             >
               Email
             </a>
