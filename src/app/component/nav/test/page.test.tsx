@@ -10,22 +10,25 @@ describe('NavBar', () => {
 
   it('renders all navigation links', () => {
     render(<NavBar />);
-    expect(screen.getByText('Home')).toBeInTheDocument();
-    expect(screen.getByText('About')).toBeInTheDocument();
-    expect(screen.getByText('Skills')).toBeInTheDocument();
-    expect(screen.getByText('Experience')).toBeInTheDocument();
-    expect(screen.getByText('Projects')).toBeInTheDocument();
-    expect(screen.getByText('Contact')).toBeInTheDocument();
+    expect(screen.getAllByText('Home')[0]).toBeInTheDocument();
+    expect(screen.getAllByText('About')[0]).toBeInTheDocument();
+    expect(screen.getAllByText('Skills')[0]).toBeInTheDocument();
+    expect(screen.getAllByText('Experience')[0]).toBeInTheDocument();
+    expect(screen.getAllByText('Projects')[0]).toBeInTheDocument();
+    expect(screen.getAllByText('Education')[0]).toBeInTheDocument();
+    expect(screen.getAllByText('Contact')[0]).toBeInTheDocument();
   });
 
   it('navigation links point to the correct anchors', () => {
     render(<NavBar />);
-    expect(screen.getByText('Home')).toHaveAttribute('href', '/#home');
-    expect(screen.getByText('About')).toHaveAttribute('href', '/#about');
-    expect(screen.getByText('Skills')).toHaveAttribute('href', '/#skills');
-    expect(screen.getByText('Experience')).toHaveAttribute('href', '/#experience');
-    expect(screen.getByText('Projects')).toHaveAttribute('href', '/#projects');
-    expect(screen.getByText('Contact')).toHaveAttribute('href', '/#contact');
+    expect(screen.getAllByText('Home')[0]).toHaveAttribute('href', '/#home');
+    expect(screen.getAllByText('About')[0]).toHaveAttribute('href', '/#about');
+    expect(screen.getAllByText('Skills')[0]).toHaveAttribute('href', '/#skills');
+    expect(screen.getAllByText('Experience')[0]).toHaveAttribute('href', '/#experience');
+    expect(screen.getAllByText('Projects')[0]).toHaveAttribute('href', '/#projects');
+    expect(screen.getAllByText('Education')[0]).toHaveAttribute('href', '/#education');
+    expect(screen.getAllByText('Contact')[0]).toHaveAttribute('href', '/#contact');
   });
 });
+
 
