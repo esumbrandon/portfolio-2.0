@@ -7,18 +7,18 @@ const Information = () => {
     >
       {/* Dot-grid background */}
       <div
-        className="absolute inset-0 opacity-[0.2]"
+        className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
           backgroundImage:
-            'radial-gradient(circle at 1px 1px, var(--text-secondary) 1px, transparent 0)',
-          backgroundSize: '32px 32px',
+            'radial-gradient(circle at 1px 1px, var(--text-primary) 1px, transparent 0)',
+          backgroundSize: '40px 40px',
         }}
       />
 
       {/* Glow orb */}
       <div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full opacity-[0.15] blur-[160px] pointer-events-none"
-        style={{ background: 'var(--accent)' }}
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full opacity-15 blur-[160px] pointer-events-none"
+        style={{ background: 'var(--accent-light)' }}
       />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 text-center">
@@ -28,51 +28,53 @@ const Information = () => {
           style={{
             background: 'var(--bg-card)',
             borderColor: 'var(--border)',
-            color: 'var(--accent-light)',
+            color: 'var(--text-primary)',
           }}
         >
-          <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />
-          Available for opportunities
+          <span className="w-2.5 h-2.5 rounded-full animate-pulse" style={{ background: 'var(--text-primary)' }} />
+          Available for Senior &amp; Full-Stack Opportunities
         </div>
 
         <h1 className="text-5xl md:text-7xl font-bold mb-4 leading-tight tracking-tighter">
           Hi, I&apos;m{' '}
-          <span className="gradient-text">Brandon</span>
+          <span className="gradient-text">Esum Brandon Oben</span>
         </h1>
 
         <h2
           className="text-2xl md:text-3xl font-medium mb-8"
           style={{ color: 'var(--text-secondary)' }}
         >
-          Full-Stack Developer & Designer
+          Full-Stack Software Engineer &amp; Backend Specialist
         </h2>
 
         <p
           className="text-lg max-w-3xl mx-auto mb-12 leading-relaxed"
           style={{ color: 'var(--text-secondary)' }}
         >
-          I build beautiful, performant, and accessible web experiences with a focus on modern
-          frontend technologies. Let&apos;s create something amazing together.
+          7 years of experience engineering secure web applications, banking platforms, PSD2 Open Finance APIs,
+          distributed microservices, and cross-platform mobile apps.
         </p>
 
         <div className="flex flex-wrap justify-center gap-4">
           <Link
-            href="/component/project"
-            className="px-8 py-4 rounded-xl font-semibold text-white transition-all duration-300 hover:scale-105 hover:brightness-125"
+            href="/#projects"
+            className="px-8 py-4 rounded-xl font-semibold border transition-all duration-300 hover:scale-105"
             style={{
               background: 'var(--accent)',
-              boxShadow: '0 0 40px var(--accent-glow)',
+              borderColor: 'var(--border)',
+              color: 'var(--text-primary)',
+              boxShadow: '0 0 32px var(--accent-glow)',
             }}
           >
             Explore My Work
           </Link>
           <Link
-            href="/component/bio"
-            className="px-8 py-4 rounded-xl font-semibold border transition-all duration-300 hover:scale-105 hover:bg-gray-300"
+            href="/#about"
+            className="px-8 py-4 rounded-xl font-semibold border transition-all duration-300 hover:scale-105"
             style={{
               borderColor: 'var(--border)',
               color: 'var(--text-primary)',
-              background: 'var(--bg-secondary)',
+              background: 'var(--bg-card)',
             }}
           >
             Get to Know Me
