@@ -169,7 +169,7 @@ export default function App() {
       <section
         id="home"
         className="min-h-screen flex flex-col justify-center relative overflow-hidden"
-        style={{ paddingTop: '82px' }}
+        style={{ paddingTop: '80px' }}
       >
         {/* dot-grid */}
         <div
@@ -177,23 +177,23 @@ export default function App() {
           style={{
             backgroundImage:
               'radial-gradient(circle at 1px 1px, var(--text-primary) 1px, transparent 0)',
-            backgroundSize: '40px 40px',
+            backgroundSize: '36px 36px',
           }}
         />
 
         {/* glow orbs */}
         <div
-          className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full opacity-20 blur-[140px] pointer-events-none"
+          className="absolute top-1/4 right-0 sm:right-1/4 w-[280px] h-[280px] sm:w-[500px] sm:h-[500px] rounded-full opacity-20 blur-[100px] sm:blur-[140px] pointer-events-none"
           style={{ background: 'var(--accent-light)' }}
         />
         <div
-          className="absolute bottom-1/4 left-1/4 w-[450px] h-[450px] rounded-full opacity-15 blur-[120px] pointer-events-none"
+          className="absolute bottom-1/4 left-0 sm:left-1/4 w-[240px] h-[240px] sm:w-[450px] sm:h-[450px] rounded-full opacity-15 blur-[90px] sm:blur-[120px] pointer-events-none"
           style={{ background: 'var(--accent-cyan)' }}
         />
 
-        <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 w-full">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-24 w-full">
           <div
-            className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs font-medium mb-8 border"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-6 sm:mb-8 border max-w-full text-left sm:text-center"
             style={{
               background: 'var(--bg-card)',
               borderColor: 'var(--border)',
@@ -201,26 +201,26 @@ export default function App() {
             }}
           >
             <span
-              className="w-2 h-2 rounded-full animate-pulse"
+              className="w-2 h-2 rounded-full animate-pulse flex-shrink-0"
               style={{ background: 'var(--text-primary)' }}
             />
-            Available for Senior &amp; Full-Stack Opportunities
+            <span className="truncate sm:overflow-visible">Available for Senior &amp; Full-Stack Opportunities</span>
           </div>
 
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-4 leading-[1.08] tracking-tight">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold mb-3 sm:mb-4 leading-[1.1] tracking-tight break-words">
             Hi, I&apos;m{' '}
             <span className="gradient-text">Esum Brandon Oben</span>
           </h1>
 
           <p
-            className="text-2xl md:text-3xl font-semibold mb-6"
+            className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 sm:mb-6 leading-snug"
             style={{ color: 'var(--text-secondary)' }}
           >
             Full-Stack Software Engineer &amp; Backend Specialist
           </p>
 
           <p
-            className="text-lg max-w-3xl mb-10 leading-relaxed"
+            className="text-base sm:text-lg max-w-3xl mb-8 sm:mb-10 leading-relaxed"
             style={{ color: 'var(--text-secondary)' }}
           >
             7 years of experience designing, developing, deploying, and maintaining scalable banking platforms,
@@ -228,10 +228,10 @@ export default function App() {
             Open Finance compliance (Berlin Group Spec V2), Keycloak IAM, Angular, React, Next.js, and Flutter.
           </p>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-3 sm:gap-4">
             <a
               href="#projects"
-              className="px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105"
+              className="w-full sm:w-auto text-center px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105 active:scale-95"
               style={{
                 background: 'var(--accent)',
                 borderColor: 'var(--border)',
@@ -243,7 +243,7 @@ export default function App() {
             </a>
             <a
               href="#about"
-              className="px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105"
+              className="w-full sm:w-auto text-center px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105 active:scale-95"
               style={{
                 borderColor: 'var(--border)',
                 color: 'var(--text-primary)',
@@ -254,7 +254,7 @@ export default function App() {
             </a>
             <a
               href="#contact"
-              className="px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105"
+              className="w-full sm:w-auto text-center px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105 active:scale-95"
               style={{
                 borderColor: 'var(--border)',
                 color: 'var(--text-primary)',
@@ -267,7 +267,7 @@ export default function App() {
         </div>
 
         {/* scroll hint */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40 pointer-events-none">
+        <div className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 opacity-40 pointer-events-none">
           <span
             className="text-xs tracking-[0.2em] uppercase font-semibold"
             style={{ color: 'var(--text-secondary)' }}
@@ -286,22 +286,22 @@ export default function App() {
       {/* ─────────────── ABOUT ─────────────── */}
       <section
         id="about"
-        className="py-32 border-t"
+        className="py-20 sm:py-28 md:py-32 border-t"
         style={{ borderColor: 'var(--border)' }}
       >
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
             {/* Profile photo */}
             <div className="flex justify-center">
               <div className="relative">
                 <div
-                  className="absolute -inset-4 rounded-3xl blur-2xl opacity-40"
+                  className="absolute -inset-3 sm:-inset-4 rounded-3xl blur-xl sm:blur-2xl opacity-40"
                   style={{
                     background: 'var(--accent-glow)',
                   }}
                 />
                 <div
-                  className="relative rounded-3xl overflow-hidden border shadow-xl"
+                  className="relative rounded-3xl overflow-hidden border shadow-xl w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80"
                   style={{ borderColor: 'var(--border)', background: 'var(--bg-card)' }}
                 >
                   <Image
@@ -310,7 +310,7 @@ export default function App() {
                     width={400}
                     height={400}
                     priority
-                    className="object-cover"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
@@ -319,7 +319,7 @@ export default function App() {
             {/* Bio */}
             <div>
               <div
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-6 border"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-4 sm:mb-6 border"
                 style={{
                   background: 'var(--bg-card)',
                   borderColor: 'var(--border)',
@@ -329,12 +329,12 @@ export default function App() {
                 Professional Background
               </div>
 
-              <h2 className="text-4xl font-bold mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 leading-tight">
                 Architecting <span className="gradient-text">resilient systems</span> &amp; modern apps
               </h2>
 
               <p
-                className="text-base md:text-lg leading-relaxed mb-4"
+                className="text-base sm:text-lg leading-relaxed mb-4"
                 style={{ color: 'var(--text-secondary)' }}
               >
                 I&apos;m Esum Brandon Oben, a Full-Stack Software Engineer with 7 years of experience
@@ -343,7 +343,7 @@ export default function App() {
               </p>
 
               <p
-                className="text-base md:text-lg leading-relaxed mb-8"
+                className="text-base sm:text-lg leading-relaxed mb-6 sm:mb-8"
                 style={{ color: 'var(--text-secondary)' }}
               >
                 At <strong>adorsys GmbH</strong>, I contributed to European Open Banking infrastructure,
@@ -352,20 +352,20 @@ export default function App() {
                 and cross-platform mobile products for multiple clients from architecture to production.
               </p>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
                 {[
                   { value: '7+', label: 'Years Exp.' },
                   { value: '3+', label: 'Companies/Ventures' },
-                  { value: '20+', label: 'Core Technologies' },
+                  { value: '20+', label: 'Technologies' },
                   { value: '3.60', label: 'B.Eng GPA (1st Class)' },
                 ].map((stat) => (
                   <div
                     key={stat.label}
-                    className="p-4 rounded-xl border card-hover text-center"
+                    className="p-3.5 sm:p-4 rounded-xl border card-hover text-center"
                     style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
                   >
-                    <div className="text-2xl font-bold gradient-text">{stat.value}</div>
-                    <div className="text-xs mt-1 font-medium" style={{ color: 'var(--text-secondary)' }}>
+                    <div className="text-xl sm:text-2xl font-bold gradient-text">{stat.value}</div>
+                    <div className="text-xs mt-1 font-medium leading-tight" style={{ color: 'var(--text-secondary)' }}>
                       {stat.label}
                     </div>
                   </div>
@@ -379,13 +379,13 @@ export default function App() {
       {/* ─────────────── SKILLS ─────────────── */}
       <section
         id="skills"
-        className="py-32 border-t"
+        className="py-20 sm:py-28 md:py-32 border-t"
         style={{ borderColor: 'var(--border)', background: 'var(--bg-secondary)' }}
       >
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
             <div
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-6 border"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-4 sm:mb-6 border"
               style={{
                 background: 'var(--bg-card)',
                 borderColor: 'var(--border)',
@@ -394,33 +394,33 @@ export default function App() {
             >
               Technical Expertise
             </div>
-            <h2 className="text-4xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">
               Comprehensive <span className="gradient-text">Tech Stack</span>
             </h2>
-            <p className="max-w-xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
+            <p className="text-sm sm:text-base max-w-xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
               Battle-tested technologies, frameworks, and architecture paradigms utilized across 7 years of engineering.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {skillCategories.map((group) => (
               <div
                 key={group.category}
-                className="p-6 rounded-2xl border card-hover flex flex-col"
+                className="p-5 sm:p-6 rounded-2xl border card-hover flex flex-col"
                 style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
               >
-                <div className="flex items-center gap-2.5 mb-4 pb-3 border-b" style={{ borderColor: 'var(--border)' }}>
-                  <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'var(--text-primary)' }} />
-                  <h3 className="font-bold text-lg" style={{ color: 'var(--text-primary)' }}>
+                <div className="flex items-center gap-2.5 mb-3.5 pb-2.5 border-b" style={{ borderColor: 'var(--border)' }}>
+                  <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ background: 'var(--text-primary)' }} />
+                  <h3 className="font-bold text-base sm:text-lg" style={{ color: 'var(--text-primary)' }}>
                     {group.category}
                   </h3>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {group.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1.5 rounded-lg text-xs font-medium border"
+                      className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg text-xs font-medium border"
                       style={{
                         background: 'var(--bg-primary)',
                         borderColor: 'var(--border)',
@@ -440,13 +440,13 @@ export default function App() {
       {/* ─────────────── EXPERIENCE ─────────────── */}
       <section
         id="experience"
-        className="py-32 border-t"
+        className="py-20 sm:py-28 md:py-32 border-t"
         style={{ borderColor: 'var(--border)' }}
       >
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
             <div
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-6 border"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-4 sm:mb-6 border"
               style={{
                 background: 'var(--bg-card)',
                 borderColor: 'var(--border)',
@@ -455,15 +455,15 @@ export default function App() {
             >
               Career History
             </div>
-            <h2 className="text-4xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">
               Professional <span className="gradient-text">Experience</span>
             </h2>
-            <p style={{ color: 'var(--text-secondary)' }}>
+            <p className="text-sm sm:text-base max-w-2xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
               Track record of building mission-critical platforms, leading engineering initiatives, and delivering scalable solutions.
             </p>
           </div>
 
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-6 sm:gap-8">
             {experience.map((job) => (
               <div
                 key={job.company}
@@ -471,20 +471,20 @@ export default function App() {
                 style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
               >
                 <div className="h-1.5" style={{ background: 'var(--accent)' }} />
-                <div className="p-6 md:p-8">
-                  <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
+                <div className="p-5 sm:p-7 md:p-8">
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4 mb-4 sm:mb-6">
                     <div>
-                      <h3 className="text-xl md:text-2xl font-bold mb-1" style={{ color: 'var(--text-primary)' }}>
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1" style={{ color: 'var(--text-primary)' }}>
                         {job.role}
                       </h3>
-                      <div className="flex flex-wrap items-center gap-3 text-sm font-semibold">
+                      <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm font-semibold">
                         <span style={{ color: 'var(--text-primary)' }}>{job.company}</span>
                         <span style={{ color: 'var(--border)' }}>•</span>
                         <span style={{ color: 'var(--text-secondary)' }}>{job.location}</span>
                       </div>
                     </div>
                     <div
-                      className="px-3.5 py-1 rounded-full text-xs font-semibold border"
+                      className="self-start px-3 py-1 rounded-full text-xs font-semibold border"
                       style={{
                         background: 'var(--bg-secondary)',
                         borderColor: 'var(--border)',
@@ -495,11 +495,11 @@ export default function App() {
                     </div>
                   </div>
 
-                  <ul className="grid md:grid-cols-2 gap-x-8 gap-y-3">
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2.5 sm:gap-y-3">
                     {job.highlights.map((point) => (
                       <li
                         key={point}
-                        className="flex items-start gap-2.5 text-sm leading-relaxed"
+                        className="flex items-start gap-2.5 text-xs sm:text-sm leading-relaxed"
                         style={{ color: 'var(--text-secondary)' }}
                       >
                         <span
@@ -520,13 +520,13 @@ export default function App() {
       {/* ─────────────── PROJECTS ─────────────── */}
       <section
         id="projects"
-        className="py-32 border-t"
+        className="py-20 sm:py-28 md:py-32 border-t"
         style={{ borderColor: 'var(--border)', background: 'var(--bg-secondary)' }}
       >
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
             <div
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-6 border"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-4 sm:mb-6 border"
               style={{
                 background: 'var(--bg-card)',
                 borderColor: 'var(--border)',
@@ -535,15 +535,15 @@ export default function App() {
             >
               Selected Engineering Projects
             </div>
-            <h2 className="text-4xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">
               Featured <span className="gradient-text">Projects</span>
             </h2>
-            <p className="max-w-xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
+            <p className="text-sm sm:text-base max-w-xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
               Architectural designs, mobile applications, and open-source contributions.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((project) => (
               <div
                 key={project.title}
@@ -551,9 +551,9 @@ export default function App() {
                 style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
               >
                 <div className="h-1.5" style={{ background: 'var(--accent)' }} />
-                <div className="p-6 flex flex-col flex-1">
+                <div className="p-5 sm:p-6 flex flex-col flex-1">
                   <h3
-                    className="text-xl font-bold mb-1"
+                    className="text-lg sm:text-xl font-bold mb-1"
                     style={{ color: 'var(--text-primary)' }}
                   >
                     {project.title}
@@ -562,13 +562,13 @@ export default function App() {
                     {project.subtitle}
                   </p>
                   <p
-                    className="text-sm leading-relaxed mb-6 flex-1"
+                    className="text-xs sm:text-sm leading-relaxed mb-5 sm:mb-6 flex-1"
                     style={{ color: 'var(--text-secondary)' }}
                   >
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-1.5 mb-6">
+                  <div className="flex flex-wrap gap-1.5 mb-5 sm:mb-6">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
@@ -584,12 +584,12 @@ export default function App() {
                     ))}
                   </div>
 
-                  <div className="flex gap-3">
+                  <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3">
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 py-2.5 rounded-lg text-sm font-semibold text-center border transition-all duration-200 hover:scale-[1.02]"
+                      className="w-full sm:flex-1 py-2.5 rounded-lg text-xs sm:text-sm font-semibold text-center border transition-all duration-200 hover:scale-[1.02] active:scale-95"
                       style={{
                         background: 'var(--bg-primary)',
                         borderColor: 'var(--border)',
@@ -602,7 +602,7 @@ export default function App() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 py-2.5 rounded-lg text-sm font-semibold text-center border transition-all duration-200 hover:scale-[1.02]"
+                      className="w-full sm:flex-1 py-2.5 rounded-lg text-xs sm:text-sm font-semibold text-center border transition-all duration-200 hover:scale-[1.02] active:scale-95"
                       style={{
                         background: 'var(--accent)',
                         borderColor: 'var(--border)',
@@ -622,13 +622,13 @@ export default function App() {
       {/* ─────────────── EDUCATION & CREDENTIALS ─────────────── */}
       <section
         id="education"
-        className="py-32 border-t"
+        className="py-20 sm:py-28 md:py-32 border-t"
         style={{ borderColor: 'var(--border)' }}
       >
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
             <div
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-6 border"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-4 sm:mb-6 border"
               style={{
                 background: 'var(--bg-card)',
                 borderColor: 'var(--border)',
@@ -637,37 +637,37 @@ export default function App() {
             >
               Academic Background
             </div>
-            <h2 className="text-4xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">
               Education &amp; <span className="gradient-text">Qualifications</span>
             </h2>
-            <p style={{ color: 'var(--text-secondary)' }}>
+            <p className="text-sm sm:text-base max-w-xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
               Formal engineering degree and academic credentials.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
             {education.map((edu) => (
               <div
                 key={edu.institution}
-                className="p-6 rounded-2xl border card-hover flex flex-col justify-between"
+                className="p-5 sm:p-6 rounded-2xl border card-hover flex flex-col justify-between"
                 style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
               >
                 <div>
-                  <div className="flex items-start justify-between gap-4 mb-2">
-                    <h3 className="text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-1.5 sm:gap-4 mb-2">
+                    <h3 className="text-base sm:text-lg font-bold leading-snug" style={{ color: 'var(--text-primary)' }}>
                       {edu.degree}
                     </h3>
                     <span
-                      className="text-xs px-2.5 py-1 rounded-full border flex-shrink-0 font-medium"
+                      className="self-start text-xs px-2.5 py-1 rounded-full border flex-shrink-0 font-medium"
                       style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)', color: 'var(--text-secondary)' }}
                     >
                       {edu.period}
                     </span>
                   </div>
-                  <p className="font-semibold text-sm mb-3" style={{ color: 'var(--text-primary)' }}>
+                  <p className="font-semibold text-xs sm:text-sm mb-2 sm:mb-3" style={{ color: 'var(--text-primary)' }}>
                     {edu.institution}
                   </p>
-                  <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                  <p className="text-xs sm:text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                     {edu.detail}
                   </p>
                 </div>
@@ -677,16 +677,16 @@ export default function App() {
 
           {/* Languages */}
           <div
-            className="rounded-2xl border p-6 max-w-xl mx-auto text-center"
+            className="rounded-2xl border p-5 sm:p-6 max-w-xl mx-auto text-center"
             style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
           >
-            <h3 className="font-bold text-lg mb-4" style={{ color: 'var(--text-primary)' }}>
+            <h3 className="font-bold text-base sm:text-lg mb-4" style={{ color: 'var(--text-primary)' }}>
               Languages
             </h3>
-            <div className="flex justify-center gap-8">
+            <div className="flex justify-around sm:justify-center gap-6 sm:gap-12">
               {languages.map((lang) => (
                 <div key={lang.name} className="flex flex-col items-center">
-                  <span className="font-bold text-base" style={{ color: 'var(--text-primary)' }}>
+                  <span className="font-bold text-sm sm:text-base" style={{ color: 'var(--text-primary)' }}>
                     {lang.name}
                   </span>
                   <span className="text-xs mt-0.5" style={{ color: 'var(--text-secondary)' }}>
@@ -705,12 +705,12 @@ export default function App() {
       {/* ─────────────── CONTACT ─────────────── */}
       <section
         id="contact"
-        className="py-32 border-t"
+        className="py-20 sm:py-28 md:py-32 border-t"
         style={{ borderColor: 'var(--border)', background: 'var(--bg-secondary)' }}
       >
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <div
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-6 border"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-4 sm:mb-6 border"
             style={{
               background: 'var(--bg-card)',
               borderColor: 'var(--border)',
@@ -720,36 +720,36 @@ export default function App() {
             Get In Touch
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             Let&apos;s Build <span className="gradient-text">Together</span>
           </h2>
 
           <p
-            className="text-lg mb-8 leading-relaxed"
+            className="text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto"
             style={{ color: 'var(--text-secondary)' }}
           >
             Whether you are looking for a Senior Full-Stack Engineer, want to discuss Open Banking and banking API integrations, or explore engineering collaboration — my inbox is open.
           </p>
 
           <div
-            className="p-6 rounded-2xl border mb-10 inline-flex flex-col sm:flex-row items-center justify-center gap-6"
+            className="p-5 sm:p-6 rounded-2xl border mb-8 sm:mb-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full"
             style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
           >
-            <div>
-              <span className="text-xs uppercase tracking-wider font-semibold block mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <div className="text-center sm:text-left">
+              <span className="text-xs uppercase tracking-wider font-semibold block mb-0.5" style={{ color: 'var(--text-secondary)' }}>
                 Email
               </span>
               <a
                 href="mailto:esumbrandon074@gmail.com"
-                className="font-bold text-sm sm:text-base hover:underline"
+                className="font-bold text-sm sm:text-base hover:underline break-all"
                 style={{ color: 'var(--text-primary)' }}
               >
                 esumbrandon074@gmail.com
               </a>
             </div>
             <div className="hidden sm:block w-px h-8" style={{ background: 'var(--border)' }} />
-            <div>
-              <span className="text-xs uppercase tracking-wider font-semibold block mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <div className="text-center sm:text-left">
+              <span className="text-xs uppercase tracking-wider font-semibold block mb-0.5" style={{ color: 'var(--text-secondary)' }}>
                 Phone
               </span>
               <a
@@ -761,8 +761,8 @@ export default function App() {
               </a>
             </div>
             <div className="hidden sm:block w-px h-8" style={{ background: 'var(--border)' }} />
-            <div>
-              <span className="text-xs uppercase tracking-wider font-semibold block mb-1" style={{ color: 'var(--text-secondary)' }}>
+            <div className="text-center sm:text-left">
+              <span className="text-xs uppercase tracking-wider font-semibold block mb-0.5" style={{ color: 'var(--text-secondary)' }}>
                 Location
               </span>
               <span className="font-bold text-sm sm:text-base" style={{ color: 'var(--text-primary)' }}>
@@ -771,10 +771,10 @@ export default function App() {
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-col sm:flex-row w-full sm:w-auto justify-center gap-3 sm:gap-4">
             <a
               href="mailto:esumbrandon074@gmail.com"
-              className="px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105"
+              className="w-full sm:w-auto text-center px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105 active:scale-95"
               style={{
                 background: 'var(--accent)',
                 borderColor: 'var(--border)',
@@ -788,7 +788,7 @@ export default function App() {
               href="https://www.linkedin.com/in/esum-brandon-o-1ba3401b1/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105"
+              className="w-full sm:w-auto text-center px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105 active:scale-95"
               style={{
                 borderColor: 'var(--border)',
                 color: 'var(--text-primary)',
@@ -801,7 +801,7 @@ export default function App() {
               href="https://github.com/esumbrandon"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105"
+              className="w-full sm:w-auto text-center px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105 active:scale-95"
               style={{
                 borderColor: 'var(--border)',
                 color: 'var(--text-primary)',
@@ -815,17 +815,17 @@ export default function App() {
       </section>
 
       {/* ─────────────── FOOTER ─────────────── */}
-      <footer className="py-8 border-t" style={{ borderColor: 'var(--border)' }}>
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
+      <footer className="py-6 sm:py-8 border-t" style={{ borderColor: 'var(--border)' }}>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <p className="text-xs sm:text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
             © 2026 Esum Brandon Oben. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-5 sm:gap-6">
             <a
               href="https://github.com/esumbrandon"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium transition-colors hover:underline"
+              className="text-xs sm:text-sm font-medium transition-colors hover:underline"
               style={{ color: 'var(--text-secondary)' }}
             >
               GitHub
@@ -834,14 +834,14 @@ export default function App() {
               href="https://www.linkedin.com/in/esum-brandon-o-1ba3401b1/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium transition-colors hover:underline"
+              className="text-xs sm:text-sm font-medium transition-colors hover:underline"
               style={{ color: 'var(--text-secondary)' }}
             >
               LinkedIn
             </a>
             <a
               href="mailto:esumbrandon074@gmail.com"
-              className="text-sm font-medium transition-colors hover:underline"
+              className="text-xs sm:text-sm font-medium transition-colors hover:underline"
               style={{ color: 'var(--text-secondary)' }}
             >
               Email

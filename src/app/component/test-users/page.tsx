@@ -75,10 +75,10 @@ export default function TestUsersSection() {
   return (
     <section
       id="test-users"
-      className="py-32 border-t"
+      className="py-20 sm:py-28 md:py-32 border-t"
       style={{ borderColor: 'var(--border)', background: 'var(--bg-secondary)' }}
     >
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Toggle between public and admin mode */}
         <div className="text-right mb-4">
           <button
@@ -86,8 +86,8 @@ export default function TestUsersSection() {
               setAdminMode(!adminMode);
               setIsAuthenticated(false);
             }}
-            className="text-xs transition-opacity hover:opacity-100"
-            style={{ color: 'var(--text-secondary)', opacity: 0.6 }}
+            className="text-xs transition-opacity hover:opacity-100 p-1"
+            style={{ color: 'var(--text-secondary)', opacity: 0.7 }}
           >
             {adminMode ? '← Back to Public View' : 'Admin'}
           </button>
@@ -96,9 +96,9 @@ export default function TestUsersSection() {
         {!adminMode ? (
           // ========== PUBLIC VIEW ==========
           <>
-            <div className="text-center mb-16">
+            <div className="text-center mb-12 sm:mb-16">
               <div
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-6 border"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-4 sm:mb-6 border"
                 style={{
                   background: 'var(--bg-card)',
                   borderColor: 'var(--border)',
@@ -107,21 +107,21 @@ export default function TestUsersSection() {
               >
                 Beta Testing Program
               </div>
-              <h2 className="text-4xl font-bold mb-4">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">
                 Become a <span className="gradient-text">Test User</span>
               </h2>
-              <p style={{ color: 'var(--text-secondary)' }}>
-                Join the beta testing program and be the first to experience and review new software builds
+              <p className="text-sm sm:text-base max-w-xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
+                Join the beta testing program and be the first to experience and review new software builds.
               </p>
             </div>
 
             <div
-              className="rounded-2xl border p-8 max-w-xl mx-auto card-hover"
+              className="rounded-2xl border p-5 sm:p-8 max-w-xl mx-auto card-hover"
               style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
             >
               {!submitted ? (
                 <>
-                  <p className="text-sm mb-6" style={{ color: 'var(--text-secondary)' }}>
+                  <p className="text-xs sm:text-sm mb-5 sm:mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                     Enter your email to join the testing program. You&apos;ll receive early access to experimental builds, test flight invites, and release previews.
                   </p>
                   <div className="flex flex-col gap-3">
@@ -131,7 +131,7 @@ export default function TestUsersSection() {
                       onChange={(e) => setUserEmail(e.target.value)}
                       onKeyDown={(e) => e.key === 'Enter' && submitEmail()}
                       placeholder="your.email@example.com"
-                      className="px-4 py-3 rounded-lg border text-sm focus:outline-none"
+                      className="px-4 py-3.5 rounded-lg border text-base sm:text-sm focus:outline-none w-full"
                       style={{
                         background: 'var(--bg-primary)',
                         borderColor: 'var(--border)',
@@ -140,7 +140,7 @@ export default function TestUsersSection() {
                     />
                     <button
                       onClick={submitEmail}
-                      className="py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-[1.02] border"
+                      className="w-full py-3.5 sm:py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-200 hover:scale-[1.02] active:scale-95 border"
                       style={{
                         background: 'var(--accent)',
                         borderColor: 'var(--border)',
@@ -155,11 +155,11 @@ export default function TestUsersSection() {
               ) : (
                 <div className="text-center py-6">
                   <div
-                    className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center border"
+                    className="w-14 h-14 sm:w-16 sm:h-16 rounded-full mx-auto mb-4 flex items-center justify-center border"
                     style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)' }}
                   >
                     <svg
-                      className="w-8 h-8"
+                      className="w-7 h-7 sm:w-8 sm:h-8"
                       style={{ color: 'var(--text-primary)' }}
                       fill="none"
                       stroke="currentColor"
@@ -168,15 +168,15 @@ export default function TestUsersSection() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>
+                  <h3 className="text-lg sm:text-xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>
                     Thank You!
                   </h3>
-                  <p className="text-sm mb-6" style={{ color: 'var(--text-secondary)' }}>
+                  <p className="text-xs sm:text-sm mb-5 sm:mb-6" style={{ color: 'var(--text-secondary)' }}>
                     You&apos;ve been added to the beta testing program. We&apos;ll be in touch soon with testing updates!
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="text-sm font-medium transition-opacity hover:opacity-80 underline"
+                    className="text-xs sm:text-sm font-medium transition-opacity hover:opacity-80 underline p-1"
                     style={{ color: 'var(--text-primary)' }}
                   >
                     Submit another email
@@ -188,10 +188,10 @@ export default function TestUsersSection() {
         ) : !isAuthenticated ? (
           // ========== ADMIN LOGIN ==========
           <div
-            className="rounded-2xl border p-8 max-w-md mx-auto card-hover"
+            className="rounded-2xl border p-5 sm:p-8 max-w-md mx-auto card-hover"
             style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
           >
-            <h3 className="text-xl font-bold mb-6 text-center" style={{ color: 'var(--text-primary)' }}>
+            <h3 className="text-lg sm:text-xl font-bold mb-5 sm:mb-6 text-center" style={{ color: 'var(--text-primary)' }}>
               Admin Access
             </h3>
             <div className="flex flex-col gap-3">
@@ -201,7 +201,7 @@ export default function TestUsersSection() {
                 onChange={(e) => setAdminPassword(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleAdminLogin()}
                 placeholder="Enter admin password"
-                className="px-4 py-3 rounded-lg border text-sm focus:outline-none"
+                className="px-4 py-3.5 rounded-lg border text-base sm:text-sm focus:outline-none w-full"
                 style={{
                   background: 'var(--bg-primary)',
                   borderColor: 'var(--border)',
@@ -210,7 +210,7 @@ export default function TestUsersSection() {
               />
               <button
                 onClick={handleAdminLogin}
-                className="py-3 rounded-lg font-semibold transition-all duration-200 hover:opacity-90 border"
+                className="w-full py-3.5 sm:py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-200 hover:opacity-90 active:scale-95 border"
                 style={{
                   background: 'var(--accent)',
                   borderColor: 'var(--border)',
@@ -224,28 +224,28 @@ export default function TestUsersSection() {
         ) : (
           // ========== ADMIN PANEL ==========
           <>
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold mb-2">
+            <div className="text-center mb-6 sm:mb-8">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-2">
                 <span className="gradient-text">Admin Panel</span>
               </h2>
-              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+              <p className="text-xs sm:text-sm" style={{ color: 'var(--text-secondary)' }}>
                 Manage registered test user emails
               </p>
             </div>
 
             <div
-              className="rounded-2xl border p-8"
+              className="rounded-2xl border p-5 sm:p-8"
               style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
             >
               {emails.length > 0 ? (
                 <>
-                  <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>
+                  <div className="flex items-center justify-between gap-2 mb-4 sm:mb-6">
+                    <h3 className="text-xs sm:text-sm font-semibold truncate" style={{ color: 'var(--text-primary)' }}>
                       Total Test Users: {emails.length}
                     </h3>
                     <button
                       onClick={clearAllEmails}
-                      className="text-xs px-3 py-1.5 rounded border transition-opacity hover:opacity-80"
+                      className="text-xs px-3 py-1.5 rounded border transition-opacity hover:opacity-80 flex-shrink-0"
                       style={{
                         background: 'var(--bg-primary)',
                         borderColor: 'var(--border)',
@@ -256,19 +256,19 @@ export default function TestUsersSection() {
                     </button>
                   </div>
 
-                  <div className="max-h-96 overflow-y-auto space-y-2 mb-6">
+                  <div className="max-h-96 overflow-y-auto space-y-2 mb-5 sm:mb-6 pr-1">
                     {emails.map((email, index) => (
                       <div
                         key={index}
-                        className="flex items-center justify-between px-4 py-2.5 rounded-lg border"
+                        className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-3.5 py-2.5 rounded-lg border"
                         style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)' }}
                       >
-                        <span className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>
+                        <span className="text-xs sm:text-sm font-medium break-all" style={{ color: 'var(--text-primary)' }}>
                           {email}
                         </span>
                         <button
                           onClick={() => removeEmail(index)}
-                          className="text-xs font-semibold px-2 py-1 rounded border transition-colors hover:bg-[var(--accent)]"
+                          className="self-end sm:self-auto text-xs font-semibold px-2.5 py-1 rounded border transition-colors hover:bg-[var(--accent)]"
                           style={{
                             background: 'var(--bg-card)',
                             borderColor: 'var(--border)',
@@ -283,7 +283,7 @@ export default function TestUsersSection() {
 
                   <button
                     onClick={generateCSV}
-                    className="w-full py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-[1.02] border"
+                    className="w-full py-3.5 sm:py-3 rounded-lg font-semibold text-xs sm:text-sm transition-all duration-200 hover:scale-[1.02] active:scale-95 border"
                     style={{
                       background: 'var(--accent)',
                       borderColor: 'var(--border)',
@@ -295,8 +295,8 @@ export default function TestUsersSection() {
                   </button>
                 </>
               ) : (
-                <div className="text-center py-12">
-                  <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                <div className="text-center py-10 sm:py-12">
+                  <p className="text-xs sm:text-sm" style={{ color: 'var(--text-secondary)' }}>
                     No test users yet. Share the public form to collect beta tester emails.
                   </p>
                 </div>

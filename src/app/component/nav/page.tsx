@@ -22,16 +22,16 @@ const NavBar = () => {
       className="fixed top-0 left-0 right-0 z-50 glass"
       style={{ borderBottom: '1px solid var(--border)' }}
     >
-      <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
-        <a href="/#home" className="flex items-center gap-3 transition-opacity hover:opacity-80">
-          <Image src={LogoTrans} alt="Logo" width={48} height={48} className="rounded-full object-cover" />
-          <span className="font-bold text-sm tracking-tight hidden sm:inline-block" style={{ color: 'var(--text-primary)' }}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+        <a href="/#home" className="flex items-center gap-2.5 sm:gap-3 transition-opacity hover:opacity-80">
+          <Image src={LogoTrans} alt="Logo" width={40} height={40} className="rounded-full object-cover sm:w-12 sm:h-12" />
+          <span className="font-bold text-sm tracking-tight" style={{ color: 'var(--text-primary)' }}>
             Esum Brandon
           </span>
         </a>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-7">
+        <div className="hidden md:flex items-center gap-6 lg:gap-7">
           {navLinks.map(({ label, href }) => {
             if (label === 'Contact') {
               return (
@@ -68,7 +68,7 @@ const NavBar = () => {
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle Navigation Menu"
-          className="md:hidden p-2 rounded-lg border transition-colors"
+          className="md:hidden p-2 rounded-lg border transition-all active:scale-95"
           style={{
             borderColor: 'var(--border)',
             background: 'var(--bg-card)',
@@ -85,10 +85,10 @@ const NavBar = () => {
         </button>
       </div>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile Dropdown Menu */}
       {mobileMenuOpen && (
         <div
-          className="md:hidden px-6 py-4 border-t glass flex flex-col gap-3"
+          className="md:hidden px-4 sm:px-6 py-4 border-t glass flex flex-col gap-2 shadow-lg animate-in fade-in slide-in-from-top-2 duration-200"
           style={{ borderColor: 'var(--border)', background: 'var(--bg-card)' }}
         >
           {navLinks.map(({ label, href }) => (
@@ -96,10 +96,17 @@ const NavBar = () => {
               key={label}
               href={href}
               onClick={() => setMobileMenuOpen(false)}
-              className="text-sm font-medium py-1.5 transition-colors"
-              style={{ color: 'var(--text-primary)' }}
+              className={`text-sm font-medium py-2.5 px-3 rounded-lg transition-all flex items-center justify-between ${
+                label === 'Contact' ? 'font-semibold' : ''
+              }`}
+              style={{
+                color: 'var(--text-primary)',
+                background: label === 'Contact' ? 'var(--accent)' : 'var(--bg-primary)',
+                borderColor: 'var(--border)',
+              }}
             >
-              {label}
+              <span>{label}</span>
+              <span className="text-xs opacity-60">→</span>
             </a>
           ))}
         </div>

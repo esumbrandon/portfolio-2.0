@@ -11,14 +11,14 @@ const Bio = () => {
   return (
     <div
       className="min-h-screen"
-      style={{ background: 'var(--bg-primary)', paddingTop: '96px', color: 'var(--text-primary)' }}
+      style={{ background: 'var(--bg-primary)', paddingTop: '80px', color: 'var(--text-primary)' }}
     >
       {/* Hero */}
-      <section className="max-w-6xl mx-auto px-6 py-20">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div>
             <div
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-6 border"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-4 sm:mb-6 border"
               style={{
                 background: 'var(--bg-card)',
                 borderColor: 'var(--border)',
@@ -28,12 +28,12 @@ const Bio = () => {
               About Me
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
               Passionate about <span className="gradient-text">engineering resilient</span> software
             </h1>
 
             <p
-              className="text-lg leading-relaxed mb-6"
+              className="text-base sm:text-lg leading-relaxed mb-4 sm:mb-6"
               style={{ color: 'var(--text-secondary)' }}
             >
               I&apos;m Esum Brandon Oben, a Full-Stack Software Engineer with 7 years of experience designing,
@@ -42,15 +42,15 @@ const Bio = () => {
             </p>
 
             <p
-              className="text-lg leading-relaxed"
+              className="text-base sm:text-lg leading-relaxed mb-6 sm:mb-0"
               style={{ color: 'var(--text-secondary)' }}
             >
-              Specialized in Banking, bet and other APIs, PSD2 / Berlin Group Spec V2 compliance, Keycloak IAM, and cloud DevOps on AWS with Docker and Kubernetes.
+              Specialized in Banking APIs, PSD2 / Berlin Group Spec V2 compliance, Keycloak IAM, and cloud DevOps on AWS with Docker and Kubernetes.
             </p>
           </div>
 
           {/* Stats grid */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
             {[
               { value: '7+', label: 'Years Experience' },
               { value: '3+', label: 'Companies/Ventures' },
@@ -59,11 +59,11 @@ const Bio = () => {
             ].map((stat) => (
               <div
                 key={stat.label}
-                className="p-6 rounded-2xl border text-center card-hover"
+                className="p-4 sm:p-6 rounded-2xl border text-center card-hover"
                 style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
               >
-                <div className="text-4xl font-bold gradient-text mb-2">{stat.value}</div>
-                <div className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
+                <div className="text-2xl sm:text-4xl font-bold gradient-text mb-1 sm:mb-2">{stat.value}</div>
+                <div className="text-xs sm:text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
                   {stat.label}
                 </div>
               </div>
@@ -74,17 +74,17 @@ const Bio = () => {
 
       {/* Skills */}
       <section
-        className="py-20 border-t"
+        className="py-12 sm:py-20 border-t"
         style={{ borderColor: 'var(--border)' }}
       >
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center">
             Skills &amp; <span className="gradient-text">Expertise</span>
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-5 sm:gap-8">
             {skills.map((skill) => (
               <div key={skill.name} className="space-y-2">
-                <div className="flex justify-between text-sm font-medium">
+                <div className="flex justify-between text-xs sm:text-sm font-medium">
                   <span style={{ color: 'var(--text-primary)' }}>{skill.name}</span>
                   <span style={{ color: 'var(--text-secondary)' }}>{skill.level}%</span>
                 </div>
@@ -107,11 +107,11 @@ const Bio = () => {
       </section>
 
       {/* What I do */}
-      <section className="max-w-6xl mx-auto px-6 py-20">
-        <h2 className="text-3xl font-bold mb-12 text-center">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center">
           What I <span className="gradient-text">Do</span>
         </h2>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
           {[
             {
               title: 'Banking & Microservices',
@@ -134,17 +134,17 @@ const Bio = () => {
           ].map((item) => (
             <div
               key={item.title}
-              className="p-6 rounded-2xl border card-hover"
+              className="p-5 sm:p-6 rounded-2xl border card-hover"
               style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
             >
-              <div className="text-3xl mb-4">{item.icon}</div>
+              <div className="text-2xl sm:text-3xl mb-3 sm:mb-4">{item.icon}</div>
               <h3
-                className="text-lg font-bold mb-3"
+                className="text-base sm:text-lg font-bold mb-2 sm:mb-3"
                 style={{ color: 'var(--text-primary)' }}
               >
                 {item.title}
               </h3>
-              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              <p className="text-xs sm:text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 {item.description}
               </p>
             </div>

@@ -41,13 +41,13 @@ const Project = () => {
   return (
     <div
       className="min-h-screen"
-      style={{ background: 'var(--bg-primary)', paddingTop: '96px', color: 'var(--text-primary)' }}
+      style={{ background: 'var(--bg-primary)', paddingTop: '80px', color: 'var(--text-primary)' }}
     >
-      <section className="max-w-6xl mx-auto px-6 py-20">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <div
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-6 border"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-4 sm:mb-6 border"
             style={{
               background: 'var(--bg-card)',
               borderColor: 'var(--border)',
@@ -56,11 +56,11 @@ const Project = () => {
           >
             Selected Work
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
             Featured <span className="gradient-text">Projects</span>
           </h1>
           <p
-            className="text-lg max-w-xl mx-auto"
+            className="text-sm sm:text-base max-w-xl mx-auto"
             style={{ color: 'var(--text-secondary)' }}
           >
             A collection of production platforms, mobile applications, and open-source systems.
@@ -68,7 +68,7 @@ const Project = () => {
         </div>
 
         {/* Project cards */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project) => (
             <div
               key={project.title}
@@ -78,9 +78,9 @@ const Project = () => {
               {/* Accent bar */}
               <div className="h-1.5" style={{ background: 'var(--accent)' }} />
 
-              <div className="p-6 flex flex-col flex-1">
+              <div className="p-5 sm:p-6 flex flex-col flex-1">
                 <h3
-                  className="text-xl font-bold mb-1"
+                  className="text-lg sm:text-xl font-bold mb-1"
                   style={{ color: 'var(--text-primary)' }}
                 >
                   {project.title}
@@ -89,14 +89,14 @@ const Project = () => {
                   {project.subtitle}
                 </p>
                 <p
-                  className="text-sm leading-relaxed mb-6 flex-1"
+                  className="text-xs sm:text-sm leading-relaxed mb-5 sm:mb-6 flex-1"
                   style={{ color: 'var(--text-secondary)' }}
                 >
                   {project.description}
                 </p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-1.5 mb-6">
+                <div className="flex flex-wrap gap-1.5 mb-5 sm:mb-6">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
@@ -113,12 +113,12 @@ const Project = () => {
                 </div>
 
                 {/* Links */}
-                <div className="flex gap-3">
+                <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3">
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 py-2.5 rounded-lg text-sm font-semibold text-center border transition-all duration-200 hover:scale-[1.02]"
+                    className="w-full sm:flex-1 py-2.5 rounded-lg text-xs sm:text-sm font-semibold text-center border transition-all duration-200 hover:scale-[1.02] active:scale-95"
                     style={{
                       background: 'var(--bg-primary)',
                       borderColor: 'var(--border)',
@@ -131,7 +131,7 @@ const Project = () => {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 py-2.5 rounded-lg text-sm font-semibold text-center border transition-all duration-200 hover:scale-[1.02]"
+                    className="w-full sm:flex-1 py-2.5 rounded-lg text-xs sm:text-sm font-semibold text-center border transition-all duration-200 hover:scale-[1.02] active:scale-95"
                     style={{
                       background: 'var(--accent)',
                       borderColor: 'var(--border)',
@@ -147,13 +147,13 @@ const Project = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-20">
-          <p className="text-lg mb-6" style={{ color: 'var(--text-secondary)' }}>
+        <div className="text-center mt-12 sm:mt-20">
+          <p className="text-base sm:text-lg mb-5 sm:mb-6" style={{ color: 'var(--text-secondary)' }}>
             Want to collaborate on a project or discuss an engineering role?
           </p>
           <a
             href="mailto:esumbrandon074@gmail.com"
-            className="inline-flex px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105"
+            className="w-full sm:w-auto inline-flex justify-center px-8 py-3.5 rounded-xl font-semibold border transition-all duration-200 hover:scale-105 active:scale-95"
             style={{
               background: 'var(--accent)',
               borderColor: 'var(--border)',
